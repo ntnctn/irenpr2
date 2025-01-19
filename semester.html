@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Варианты семестровой работы</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Главная</a></li>
+            <li><a href="tasks.html" class="nav-link">Задания</a></li>
+            <li><a href="semester.html" class="nav-link active">Варианты семестровой</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Варианты семестровой работы</h1>
+        <div class="semester-buttons">
+            <button class="generate-button" data-variant="1">Вариант 1</button>
+            <button class="generate-button" data-variant="2">Вариант 2</button>
+            <button class="generate-button" data-variant="3">Вариант 3</button>
+        </div>
+        <div id="semester-variants">
+            <!-- Варианты семестровых работ будут вставлены сюда -->
+        </div>
+        <button id="submit-semester-button" style="display:none">Проверить ответы</button>
+         <p id="total-score" style="display: none"></p>
+        <button class="back-button" onclick="window.location.href='index.html'">На главную</button>
+    </main>
+    <script src="script2.js"></script>
+</body>
+</html>
