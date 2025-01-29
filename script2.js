@@ -1,59 +1,60 @@
+
 const quizData = [
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 1,
         image: 'images/1-1-1.png',
-        correctAnswer: 'ответ 1'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 2,
         image: 'images/1-1-2.png',
-        correctAnswer: 'ответ 2'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 3,
         image: 'images/1-1-3.png',
-        correctAnswer: 'ответ 3'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 4,
         image: 'images/1-1-4.png',
-        correctAnswer: 'ответ 4'
-    },
-    {
-        theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
-        subtheme: 'Разложить на множители',
-        number: 1,
-        image: 'images/1-3-1.png',
-        correctAnswer: 'ответ 4'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Функции и их графики',
-        subtheme: 'Найдите значение числового выражения',
+        subtheme: 'Вычисление значений функции по формуле',
         number: 1,
         image: 'images/2-1-1.png',
-        correctAnswer: 'ответ 5'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
-    {
+        {
         theme: 'Функции и их графики',
-        subtheme: 'Найдите значение числового выражения',
+        subtheme: 'Вычисление значений функции по формуле',
         number: 2,
         image: 'images/2-1-2.png',
-        correctAnswer: 'ответ 6'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
-    {
+     {
         theme: 'Функции и их графики',
-        subtheme: 'Найдите значение числового выражения',
+        subtheme: 'Вычисление значений функции по формуле',
         number: 3,
         image: 'images/2-1-3.png',
-        correctAnswer: 'ответ 7'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     }
 ];
 
@@ -73,22 +74,37 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
         resultMessage.classList.add('result-message');
         listItem.appendChild(resultMessage);
     }
-
+     const decisionButton = listItem.querySelector('.decision-button');
     if (userAnswer === '') {
         resultMessage.textContent = `Вы не ввели ответ`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
+          decisionButton.style.display = 'none';
     } else if (userAnswer === correctAnswer) {
         resultMessage.textContent = 'Правильно!';
         resultMessage.classList.remove('incorrect');
         resultMessage.classList.add('correct');
+         decisionButton.style.display = 'inline-block';
     } else {
         resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
+         decisionButton.style.display = 'none';
     }
 }
 
+function showDecision(decisionImage, listItem) {
+    let existingImage = listItem.querySelector('.solution-image');
+    if (existingImage){
+        existingImage.remove();
+        return;
+    }
+    const image = document.createElement('img');
+    image.src = decisionImage;
+    image.alt = 'Решение';
+    image.classList.add('solution-image');
+    listItem.appendChild(image);
+}
 
 function generateSemesterVariant(variantNumber) {
     currentVariantTasks = [];
@@ -109,20 +125,22 @@ function generateSemesterVariant(variantNumber) {
     variantTitle.textContent = `Вариант ${variantNumber}`;
     variantContainer.appendChild(variantTitle)
     semesterVariantsContainer.appendChild(variantContainer)
+    let taskNumberInVariant = 1;
     for (const theme in groupedTasks) {
-        const themeContainer = document.createElement('div');
-        themeContainer.classList.add('theme-container');
-        const themeTitle = document.createElement('h3');
-        themeTitle.textContent = theme;
-        themeContainer.appendChild(themeTitle);
-        variantContainer.appendChild(themeContainer);
+
         for (const subtheme in groupedTasks[theme]) {
             const subthemeList = document.createElement('ul');
             subthemeList.classList.add('subtheme-list');
-            const subthemeTitle = document.createElement('h4');
-            subthemeTitle.textContent = subtheme;
-            themeContainer.appendChild(subthemeTitle);
-            themeContainer.appendChild(subthemeList);
+             const subthemeTitle = document.createElement('h4');
+             const taskNumber = document.createElement('span');
+              taskNumber.textContent = `${taskNumberInVariant}. `;
+              taskNumber.classList.add('subtheme-number');
+              subthemeTitle.appendChild(taskNumber);
+             subthemeTitle.append(subtheme);
+
+
+            variantContainer.appendChild(subthemeTitle);
+            variantContainer.appendChild(subthemeList);
             const tasksForSubtheme = groupedTasks[theme][subtheme];
             const taskForVariant = tasksForSubtheme.find(task => task.number == variantNumber);
             let listItem = document.createElement('li');
@@ -137,14 +155,21 @@ function generateSemesterVariant(variantNumber) {
                 input.type = 'text';
                 input.placeholder = 'Введите ответ';
                 input.classList.add('answer-input');
+                
+                const decisionButton = document.createElement('button');
+                decisionButton.textContent = 'Показать решение';
+                decisionButton.classList.add('decision-button');
+                decisionButton.addEventListener('click', () => showDecision(taskForVariant.decision, listItem));
 
 
                 listItem.appendChild(image);
                 listItem.appendChild(input);
+                listItem.appendChild(decisionButton);
             } else {
                  listItem.textContent = 'Задание для данного варианта не найдено';
             }
               subthemeList.appendChild(listItem);
+             taskNumberInVariant++;
         }
     }
     submitSemesterButton.style.display = 'inline-block';
@@ -180,4 +205,3 @@ generateButtons.forEach(button => {
 });
 
 submitSemesterButton.addEventListener('click', calculateScore);
-

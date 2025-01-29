@@ -147,3 +147,7 @@ background-color: #0b7dda;
   max-height: 200px;
   margin-top: 10px;
 }
+.task-number {
+font-weight: bold;
+margin-right: 5px;
+}

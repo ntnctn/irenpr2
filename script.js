@@ -123,10 +123,15 @@ function renderTasks() {
                 subthemeTitle.textContent = subtheme;
                 themeContainer.appendChild(subthemeTitle);
                 themeContainer.appendChild(subthemeList);
-            groupedTasks[theme][subtheme].forEach(task => {
+            groupedTasks[theme][subtheme].forEach((task, index) => {
 
                 const listItem = document.createElement('li');
                  listItem.classList.add('task-item');
+                 
+                 const taskNumber = document.createElement('span');
+                    taskNumber.textContent = `${index + 1}. `;
+                    taskNumber.classList.add('task-number');
+                     listItem.appendChild(taskNumber);
 
                 const image = document.createElement('img');
                  image.src = task.image;
