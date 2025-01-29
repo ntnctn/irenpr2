@@ -4,51 +4,59 @@ const quizData = [
         subtheme: 'Найдите значение числового выражения',
         number: 1,
         image: 'images/1-1-1.png',
-        correctAnswer: 'ответ 1'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 2,
         image: 'images/1-1-2.png',
-        correctAnswer: 'ответ 2'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 3,
         image: 'images/1-1-3.png',
-        correctAnswer: 'ответ 3'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Разложение многочленов на множители. Формулы сокращенного умножения.',
         subtheme: 'Найдите значение числового выражения',
         number: 4,
         image: 'images/1-1-4.png',
-        correctAnswer: 'ответ 4'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
     {
         theme: 'Функции и их графики',
         subtheme: 'Найдите значение числового выражения',
         number: 'Вычисление значений функции по формуле',
         image: 'images/2-1-1.png',
-        correctAnswer: 'ответ 5'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
         {
         theme: 'Функции и их графики',
         subtheme: 'Вычисление значений функции по формуле',
         number: 2,
         image: 'images/2-1-2.png',
-        correctAnswer: 'ответ 6'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     },
      {
         theme: 'Функции и их графики',
         subtheme: 'Вычисление значений функции по формуле',
         number: 3,
         image: 'images/2-1-3.png',
-        correctAnswer: 'ответ 7'
+        correctAnswer: '1',
+        decision: 'images/a-1-1-1.png'
     }
 ];
+
 const mainContainer = document.querySelector('main');
 const tasksContainer = document.createElement('div');
 tasksContainer.classList.add('tasks-container');
@@ -62,18 +70,33 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
         resultMessage.classList.add('result-message');
         listItem.appendChild(resultMessage);
     }
+    const decisionButton = listItem.querySelector('.decision-button');
 
     if (userAnswer === correctAnswer) {
         resultMessage.textContent = 'Правильно!';
-        resultMessage.classList.remove('incorrect');        
+        resultMessage.classList.remove('incorrect');
         resultMessage.classList.add('correct');
+        decisionButton.style.display = 'inline-block';
     } else {
         resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
+         decisionButton.style.display = 'none';
     }
 }
 
+function showDecision(decisionImage, listItem) {
+    let existingImage = listItem.querySelector('.solution-image');
+    if (existingImage){
+        existingImage.remove();
+        return;
+    }
+    const image = document.createElement('img');
+    image.src = decisionImage;
+    image.alt = 'Решение';
+    image.classList.add('solution-image');
+    listItem.appendChild(image);
+}
 function renderTasks() {
     const groupedTasks = quizData.reduce((acc, task) => {
         if (!acc[task.theme]) {
@@ -116,15 +139,22 @@ function renderTasks() {
                 input.placeholder = 'Введите ответ';
                  input.classList.add('answer-input');
 
-                const button = document.createElement('button');
-                 button.textContent = 'Ответить';
-                  button.classList.add('answer-button');
-                  button.addEventListener('click', () => checkAnswer(input, task.correctAnswer, listItem));
+                const answerButton = document.createElement('button');
+                 answerButton.textContent = 'Ответить';
+                  answerButton.classList.add('answer-button');
+                  answerButton.addEventListener('click', () => checkAnswer(input, task.correctAnswer, listItem));
+
+                const decisionButton = document.createElement('button');
+                decisionButton.textContent = 'Показать решение';
+                decisionButton.classList.add('decision-button');
+                decisionButton.addEventListener('click', () => showDecision(task.decision, listItem));
 
 
                 listItem.appendChild(image);
                 listItem.appendChild(input);
-                listItem.appendChild(button);
+                listItem.appendChild(answerButton);
+                 listItem.appendChild(decisionButton);
+
 
                 subthemeList.appendChild(listItem);
             });
