@@ -12,17 +12,18 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
         listItem.appendChild(resultMessage);
     }
     const decisionButton = listItem.querySelector('.decision-button');
+    decisionButton.style.display = 'inline-block'; // Показывать кнопку решения всегда
 
     if (userAnswer === correctAnswer) {
         resultMessage.textContent = 'Правильно!';
         resultMessage.classList.remove('incorrect');
         resultMessage.classList.add('correct');
-        decisionButton.style.display = 'inline-block';
+
     } else {
         resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
-         decisionButton.style.display = 'none';
+
     }
 }
 
@@ -97,6 +98,7 @@ async function renderTasks() {
                 decisionButton.textContent = 'Показать решение';
                 decisionButton.classList.add('decision-button');
                 decisionButton.addEventListener('click', () => showDecision(task.decision, listItem));
+                 decisionButton.style.display = 'none';  // Скрыть кнопку решения изначально
 
 
                 listItem.appendChild(image);
