@@ -1,45 +1,77 @@
-
-
-.semester-buttons {
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.generate-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-   border-radius: 5px;
-   margin: 0 10px;
+nav {
+background-color: #f2f2f2;
+padding: 10px 0;
 }
-.generate-button:hover{
+
+.nav-links {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+}
+
+.nav-links li {
+margin: 0 15px;
+}
+
+.nav-link {
+text-decoration: none;
+color: #333;
+font-weight: bold;
+padding: 8px 12px;
+border-radius: 5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+background-color: #ddd;
+}
+
+main {
+flex: 1;
+padding: 20px;
+text-align: center;
+}
+
+
+.back-button {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+.back-button:hover{
 background-color: #45a049;
 }
-
-#semester-variants{
+.tasks-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+   width: 100%;
+
 }
-.variant-container{
+.theme-container{
   display: flex;
   flex-direction: column;
-   align-items: center;
+  align-items: center;
    width: 80%;
+   margin-bottom: 20px;
    border: 1px solid #ddd;
   padding: 10px;
   border-radius: 8px;
-      margin-bottom: 20px;
-}
-.theme-container{
- display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-      margin-bottom: 10px;
 }
 .subtheme-list {
   list-style: none;
@@ -51,7 +83,7 @@ background-color: #45a049;
    width: 100%;
 }
 .task-item {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #ddd;
    border-radius: 8px;
@@ -73,17 +105,17 @@ margin-bottom: 10px;
   border: 1px solid #ccc;
    border-radius: 5px;
 }
-#submit-semester-button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-       margin: 20px 0;
+.answer-button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+   border-radius: 5px;
+   margin-left: 5px;
 }
-#submit-semester-button:hover {
-  background-color: #45a049;
+.answer-button:hover{
+background-color: #45a049;
 }
 .result-message {
   margin-top: 10px;
@@ -109,12 +141,13 @@ display: none;
 .decision-button:hover {
 background-color: #0b7dda;
 }
+
 .solution-image {
   max-width: 200px;
   max-height: 200px;
   margin-top: 10px;
 }
-.subtheme-number {
+.task-number {
 font-weight: bold;
 margin-right: 5px;
 }
