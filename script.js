@@ -56,7 +56,6 @@ const quizData = [
         decision: 'images/a-1-1-1.png'
     }
 ];
-
 const mainContainer = document.querySelector('main');
 const tasksContainer = document.createElement('div');
 tasksContainer.classList.add('tasks-container');
@@ -97,7 +96,10 @@ function showDecision(decisionImage, listItem) {
     image.classList.add('solution-image');
     listItem.appendChild(image);
 }
-function renderTasks() {
+
+async function renderTasks() {
+    const quizData = await loadQuizData();
+
     const groupedTasks = quizData.reduce((acc, task) => {
         if (!acc[task.theme]) {
             acc[task.theme] = {};
@@ -127,7 +129,7 @@ function renderTasks() {
 
                 const listItem = document.createElement('li');
                  listItem.classList.add('task-item');
-                 
+
                  const taskNumber = document.createElement('span');
                     taskNumber.textContent = `${index + 1}. `;
                     taskNumber.classList.add('task-number');
@@ -167,4 +169,13 @@ function renderTasks() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', renderTasks);
+async function loadQuizData() {
+    const response = await fetch('quizData.json');
+    const data = await response.json();
+    return data;
+}
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+   await renderTasks();
+});
