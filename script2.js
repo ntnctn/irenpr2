@@ -20,22 +20,21 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
         resultMessage.classList.add('result-message');
         listItem.appendChild(resultMessage);
     }
-     const decisionButton = listItem.querySelector('.decision-button');
+    const decisionButton = listItem.querySelector('.decision-button');
+    decisionButton.style.display = 'inline-block'; // Показываем кнопку решения всегда!
+
     if (userAnswer === '') {
-        resultMessage.textContent = `Вы не ввели ответ`;
+        resultMessage.textContent = `Вы не ввели ответ. Правильный ответ: ${correctAnswer}`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
-          decisionButton.style.display = 'none';
     } else if (userAnswer === correctAnswer) {
         resultMessage.textContent = 'Правильно!';
         resultMessage.classList.remove('incorrect');
         resultMessage.classList.add('correct');
-         decisionButton.style.display = 'inline-block';
     } else {
         resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`;
         resultMessage.classList.remove('correct');
         resultMessage.classList.add('incorrect');
-         decisionButton.style.display = 'none';
     }
 }
 
@@ -106,6 +105,8 @@ async function generateSemesterVariant(variantNumber) {
               const decisionButton = document.createElement('button');
               decisionButton.textContent = 'Показать решение';
               decisionButton.classList.add('decision-button');
+              decisionButton.style.display = 'none';  //Скрыть кнопку изначально
+
               decisionButton.addEventListener('click', () => showDecision(taskForVariant.decision, listItem));
 
 
