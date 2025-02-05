@@ -1,0 +1,118 @@
+
+.tasks-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   width: 100%;
+
+}
+.theme-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   width: 80%;
+   margin-bottom: 20px;
+   border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+.subtheme-list {
+  list-style: none;
+  padding: 0;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+   width: 100%;
+}
+.task-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+   border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: left;
+  display: flex;
+flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.task-image {
+max-width: 200px;
+max-height: 200px;
+margin-bottom: 10px;
+}
+.answer-input {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+   border-radius: 5px;
+}
+.answer-button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+   border-radius: 5px;
+   margin-left: 5px;
+}
+.answer-button:hover{
+background-color: #45a049;
+}
+.result-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.result-message.correct {
+  color: green;
+}
+.result-message.incorrect {
+  color: red;
+}
+.decision-button {
+padding: 8px 15px;
+background-color: #2196F3;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+margin-left: 5px;
+display: none;
+}
+
+.decision-button:hover {
+background-color: #0b7dda;
+}
+
+.solution-image {
+  max-width: 200px;
+  max-height: 200px;
+  margin-top: 10px;
+}
+.task-number {
+font-weight: bold;
+margin-right: 5px;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;  /* Изначально скрыть */
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
