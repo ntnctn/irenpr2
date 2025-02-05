@@ -1,3 +1,4 @@
+
 const mainContainer = document.querySelector('main');
 const tasksContainer = document.createElement('div');
 tasksContainer.classList.add('tasks-container');
@@ -12,7 +13,7 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
         listItem.appendChild(resultMessage);
     }
     const decisionButton = listItem.querySelector('.decision-button');
-    decisionButton.style.display = 'inline-block'; // Показывать кнопку решения всегда
+    decisionButton.style.display = 'inline-block';
 
     if (userAnswer === correctAnswer) {
         resultMessage.textContent = 'Правильно!';
@@ -40,7 +41,7 @@ function showDecision(decisionImage, listItem) {
     listItem.appendChild(image);
 }
 
-async function renderTasks() {
+async function renderThemes() {
     const quizData = await loadQuizData();
 
     const groupedTasks = quizData.reduce((acc, task) => {
@@ -57,17 +58,25 @@ async function renderTasks() {
     for (const theme in groupedTasks) {
         const themeContainer = document.createElement('div');
         themeContainer.classList.add('theme-container');
+        themeContainer.classList.add('collapsible');
         const themeTitle = document.createElement('h2');
         themeTitle.textContent = theme;
+        themeTitle.classList.add('theme-title');
         themeContainer.appendChild(themeTitle);
         tasksContainer.appendChild(themeContainer);
-        for (const subtheme in groupedTasks[theme]) {
+
+        const content = document.createElement('div');
+        content.classList.add('content');
+        themeContainer.appendChild(content);
+
+         for (const subtheme in groupedTasks[theme]) {
             const subthemeList = document.createElement('ul');
              subthemeList.classList.add('subtheme-list');
              const subthemeTitle = document.createElement('h3');
                 subthemeTitle.textContent = subtheme;
-                themeContainer.appendChild(subthemeTitle);
-                themeContainer.appendChild(subthemeList);
+                content.appendChild(subthemeTitle);
+                content.appendChild(subthemeList);
+
             groupedTasks[theme][subtheme].forEach((task, index) => {
 
                 const listItem = document.createElement('li');
@@ -98,8 +107,7 @@ async function renderTasks() {
                 decisionButton.textContent = 'Показать решение';
                 decisionButton.classList.add('decision-button');
                 decisionButton.addEventListener('click', () => showDecision(task.decision, listItem));
-                 decisionButton.style.display = 'none';  // Скрыть кнопку решения изначально
-
+                 decisionButton.style.display = 'none';
 
                 listItem.appendChild(image);
                 listItem.appendChild(input);
@@ -111,6 +119,35 @@ async function renderTasks() {
             });
         }
     }
+
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener('click', function() {
+            // Сворачиваем все остальные темы
+            collapsibles.forEach(otherCollapsible => {
+                if (otherCollapsible !== this) {
+                    otherCollapsible.classList.remove('active');
+                    const content = otherCollapsible.querySelector('.content');
+                    content.style.display = 'none';
+                }
+            });
+
+            // Разворачиваем или сворачиваем текущую тему
+            this.classList.toggle('active');
+            const content = this.querySelector('.content');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+
+    // Скрываем все content изначально
+    const allContent = document.querySelectorAll('.content');
+    allContent.forEach(content => {
+        content.style.display = 'none';
+    });
 }
 
 async function loadQuizData() {
@@ -119,7 +156,6 @@ async function loadQuizData() {
     return data;
 }
 
-
 document.addEventListener('DOMContentLoaded', async () => {
-   await renderTasks();
+   await renderThemes();
 });
