@@ -65,89 +65,92 @@ async function renderThemes() {
         themeContainer.appendChild(themeTitle);
         tasksContainer.appendChild(themeContainer);
 
-        const content = document.createElement('div');
-        content.classList.add('content');
-        themeContainer.appendChild(content);
+        themeTitle.addEventListener('click', function(event) { // Слушаем клик именно на заголовке темы
+            // Проверяем, активна ли тема
+            const isActive = themeContainer.classList.contains('active');
 
-         for (const subtheme in groupedTasks[theme]) {
-            const subthemeList = document.createElement('ul');
-             subthemeList.classList.add('subtheme-list');
-             const subthemeTitle = document.createElement('h3');
-                subthemeTitle.textContent = subtheme;
-                content.appendChild(subthemeTitle);
-                content.appendChild(subthemeList);
-
-            groupedTasks[theme][subtheme].forEach((task, index) => {
-
-                const listItem = document.createElement('li');
-                 listItem.classList.add('task-item');
-
-                 const taskNumber = document.createElement('span');
-                    taskNumber.textContent = `${index + 1}. `;
-                    taskNumber.classList.add('task-number');
-                     listItem.appendChild(taskNumber);
-
-                const image = document.createElement('img');
-                 image.src = task.image;
-                  image.alt = 'задание';
-                 image.classList.add('task-image');
-
-
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.placeholder = 'Введите ответ';
-                 input.classList.add('answer-input');
-
-                const answerButton = document.createElement('button');
-                 answerButton.textContent = 'Ответить';
-                  answerButton.classList.add('answer-button');
-                  answerButton.addEventListener('click', () => checkAnswer(input, task.correctAnswer, listItem));
-
-                const decisionButton = document.createElement('button');
-                decisionButton.textContent = 'Показать решение';
-                decisionButton.classList.add('decision-button');
-                decisionButton.addEventListener('click', () => showDecision(task.decision, listItem));
-                 decisionButton.style.display = 'none';
-
-                listItem.appendChild(image);
-                listItem.appendChild(input);
-                listItem.appendChild(answerButton);
-                 listItem.appendChild(decisionButton);
-
-
-                subthemeList.appendChild(listItem);
-            });
-        }
-    }
-
-    const collapsibles = document.querySelectorAll('.collapsible');
-    collapsibles.forEach(collapsible => {
-        collapsible.addEventListener('click', function() {
-            // Сворачиваем все остальные темы
+            // Сворачиваем все остальные темы и удаляем их содержимое
+            const collapsibles = document.querySelectorAll('.collapsible');
             collapsibles.forEach(otherCollapsible => {
-                if (otherCollapsible !== this) {
+                if (otherCollapsible !== themeContainer) {
                     otherCollapsible.classList.remove('active');
                     const content = otherCollapsible.querySelector('.content');
-                    content.style.display = 'none';
+                    if (content) {
+                        content.remove(); // Удаляем содержимое
+                    }
                 }
             });
 
-            // Разворачиваем или сворачиваем текущую тему
-            this.classList.toggle('active');
-            const content = this.querySelector('.content');
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
+            if (isActive) {
+                // Если тема уже активна, то сворачиваем ее и удаляем содержимое
+                themeContainer.classList.remove('active');
+                const content = themeContainer.querySelector('.content');
+                if (content) {
+                    content.remove(); // Удаляем содержимое
+                }
             } else {
-                content.style.display = 'block';
+                // Если тема не активна, то разворачиваем ее и генерируем контент
+                themeContainer.classList.add('active');
+                const content = document.createElement('div');
+                content.classList.add('content');
+                themeContainer.appendChild(content);
+                renderThemeContent(content, groupedTasks[theme]);
             }
         });
-    });
+    }
+}
 
-    // Скрываем все content изначально
-    const allContent = document.querySelectorAll('.content');
-    allContent.forEach(content => {
-        content.style.display = 'none';
-    });
+async function renderThemeContent(contentContainer, themeTasks) {
+    for (const subtheme in themeTasks) {
+        const subthemeList = document.createElement('ul');
+        subthemeList.classList.add('subtheme-list');
+        const subthemeTitle = document.createElement('h3');
+        subthemeTitle.textContent = subtheme;
+        contentContainer.appendChild(subthemeTitle);
+        contentContainer.appendChild(subthemeList);
+
+        themeTasks[subtheme].forEach((task, index) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('task-item');
+
+            const taskNumber = document.createElement('span');
+            taskNumber.textContent = `${index + 1}. `;
+            taskNumber.classList.add('task-number');
+            listItem.appendChild(taskNumber);
+
+            const image = document.createElement('img');
+            image.src = task.image;
+            image.alt = 'задание';
+            image.classList.add('task-image');
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Введите ответ';
+            input.classList.add('answer-input');
+
+            const answerButton = document.createElement('button');
+            answerButton.textContent = 'Ответить';
+            answerButton.classList.add('answer-button');
+            answerButton.addEventListener('click', () => {
+                checkAnswer(input, task.correctAnswer, listItem);
+            });
+
+            const decisionButton = document.createElement('button');
+            decisionButton.textContent = 'Показать решение';
+            decisionButton.classList.add('decision-button');
+            decisionButton.addEventListener('click', () => {
+                showDecision(task.decision, listItem);
+            });
+            decisionButton.style.display = 'none';
+
+            listItem.appendChild(image);
+            listItem.appendChild(input);
+            listItem.appendChild(answerButton);
+            listItem.appendChild(decisionButton);
+
+            subthemeList.appendChild(listItem);
+        });
+    }
 }
 
 async function loadQuizData() {
