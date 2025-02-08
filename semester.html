@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Варианты семестровой работы</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="styleSem.css">
 </head>
 <body>
     <nav>
-        <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Главная</a></li>
-            <li><a href="tasks.html" class="nav-link">Задания</a></li>
-            <li><a href="semester.html" class="nav-link active">Варианты семестровой</a></li>
-        </ul>
+        <a href="index.html" class="nav-link active">Главная</a>
+        <a href="tasks.html" class="nav-link">Тренажер</a>
+            <a href="semester.html" class="nav-link">Варианты</a>
     </nav>
     <main>
-        <h1>Варианты семестровой работы</h1>
+        
+        <section class="titles pagestitles">
+            <h1>Варианты</h1>
+            <p> текст-рыба для вариантов</p>
+        </section>
+
         <div class="semester-buttons">
             <button class="generate-button" data-variant="1">Вариант 1</button>
             <button class="generate-button" data-variant="2">Вариант 2</button>
@@ -26,7 +29,7 @@
         </div>
         <button id="submit-semester-button" style="display:none">Проверить ответы</button>
          <p id="total-score" style="display: none"></p>
-        <button class="back-button" onclick="window.location.href='index.html'">На главную</button>
+        <!-- <button class="back-button" onclick="window.location.href='index.html'">На главную</button> -->
     </main>
     <script src="script2.js"></script>
 </body>

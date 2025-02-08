@@ -1,0 +1,62 @@
+
+
+
+.titles{
+    /* text-align: left; */
+    margin-bottom: 30px;
+}
+
+
+.titles p {
+    /* font-size: 1.2em;
+    line-height: 1.6; */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start; /* Равномерное распределение */
+    align-items: left; /* Центрирование по вертикали */
+    margin-top: 20px;
+    margin-right: 20%;
+    gap: 10px;
+
+}
+
+.button {
+    background-color: #001f3f;
+    color: white;
+    text-decoration: none;
+    padding: 100px 20px 15px 20px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    display: flex; /* Чтобы выровнять текст и стрелку */
+    align-items: left;
+    transition: background-color 0.3s;
+    /* width: 49%; Чтобы кнопки занимали примерно половину ширины */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+    flex-direction: column; /* Расположение контента по вертикали */
+    text-align: left; /* Центрирование текста */
+}
+
+.button:hover {
+    background-color: var(--color-primary-animation);
+}
+
+.button img {
+    max-width: 20%; /*Чтобы изображение котика не вылезало за пределы*/
+    margin-bottom: 10px;
+}
+
+.button .arrow {
+  /*  display: inline-block; /* Делает стрелку блочным элементом */
+    margin-left: 10px; /* Добавляет отступ между текстом и стрелкой */
+    font-size: 2em; /* Увеличивает размер стрелки */
+}
+
+footer {
+    margin: var(--px15);
+    text-align: right;
+    padding: 20px 0;
+    font-size: 0.8em;
+    color: #001f3f;
+}

@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задания</title>
-     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="styleTasks.css">
 </head>
 <body>
     <nav>
-        <ul class="nav-links">
-           <li><a href="index.html" class="nav-link">Главная</a></li>
-            <li><a href="tasks.html" class="nav-link active">Задания</a></li>
-            <li><a href="semester.html" class="nav-link">Варианты семестровой</a></li>
-        </ul>
+        <a href="index.html" class="nav-link active">Главная</a>
+        <a href="tasks.html" class="nav-link">Тренажер</a>
+            <a href="semester.html" class="nav-link">Варианты</a>
     </nav>
     <main>
-        <h1>Задания</h1>
+        <section class="titles pagestitles">
+            <h1>Тренажер</h1>
+            <p> текст-рыба для тренажера</p>
+        </section>
+        
         
         <ul id="tasks-list">
             <!-- Задания будут вставлены сюда динамически -->
         </ul>
-        <button class="back-button" onclick="window.location.href='index.html'">На главную</button>
+        <!-- <button class="back-button" onclick="window.location.href='index.html'">На главную</button> -->
     </main>
     <script src="script.js"></script>
 </body>

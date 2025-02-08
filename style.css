@@ -1,153 +1,145 @@
+:root {
+
+/* правила для цветовой гаммы */
+
+  --color-primary: #162745;
+  --color-primary-animation: #0e2d63;
+  --color-secondary: #000000;
+  --color-background: #ffffff;
+
+/* основные правила для геометрии */
+
+  --border-radius-main: 35px; 
+  --border-radius-secondary: 50px;
+
+/* Шрифты */
+--font-header: Bezier_Sans;
+--font-main: Century_Gothic;
+
+/* Размеры */
+
+--font-size-large: 7.4vw;
+--font-size-large-but-smaller:7vw;
+--font-size-main: 1.4vw;
+--font-size-small: 1vw;
+
+--px20: 1.6vw;
+--px15:1.2vw;
+--px80: 6vw;
+
+}
+
+@font-face {
+  font-family: "Bezier_Sans";
+  src: url("../fonts/Bézier-Sans™_variable.woff"), format("woff"); 
+}
+
+@font-face {
+  font-family: "Century_Gothic";
+  src: url("../fonts/GOTHIC.woff"), format("woff"); 
+}
+
+
 body {
-  font-family: sans-serif;
+  font-family: var(--font-main);
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-size: var(--font-size-main);
 }
+
+p{
+  margin:0;
+}
+
+main{
+  /* max-width: 960px; */
+  margin: 0 20px 0 20px;
+  padding: var(--px20);
+  display: flex;
+  flex-direction: column;
+
+}
+
 
 nav {
-background-color: #f2f2f2;
-padding: 10px 0;
+  display: flex; 
+  
+  /* max-width: 960px; */
+  margin: 20px auto 0 auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+  justify-content: center;
+  padding: 5px 0;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-main);
+  /* font-size: var(--font-size-small); */
 }
 
-.nav-links {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-justify-content: center;
-}
+nav a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  margin: 0 15px;
+  padding: 5px 10px;
 
-.nav-links li {
-margin: 0 15px;
-}
+  font-size: 100%;
+  line-height: 85%;
+  height: 85%;
 
-.nav-link {
-text-decoration: none;
-color: #333;
-font-weight: bold;
-padding: 8px 12px;
-border-radius: 5px;
-}
+/* для анимки */
+  position: relative;
 
-.nav-link:hover,
-.nav-link.active {
-background-color: #ddd;
-}
-
-main {
-flex: 1;
-padding: 20px;
-text-align: center;
 }
 
 
-.back-button {
-margin-top: 20px;
-padding: 10px 20px;
-background-color: #4CAF50;
-color: white;
-border: none;
-cursor: pointer;
-border-radius: 5px;
+/* все дальше для анимки */
+nav a::after{
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: block;
+  height: 1.2px;
+  background: var(--color-primary);
+  width: 0;
+  transition: 0.3s;
+
 }
-.back-button:hover{
-background-color: #45a049;
+ 
+/* анимка при наведении */
+nav a:hover::after {
+  width: 90%;
 }
-.tasks-container{
+
+ .titles {
   display: flex;
   flex-direction: column;
-  align-items: center;
-   width: 100%;
+}
 
-}
-.theme-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-   width: 80%;
-   margin-bottom: 20px;
-   border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-}
-.subtheme-list {
-  list-style: none;
+h1{
+  font-family: var(--font-header);
+  color: var(--color-primary);
+
+  margin: 25px 0 0 0;
   padding: 0;
-   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-   width: 100%;
-}
-.task-item {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-   border-radius: 8px;
-  background-color: #f9f9f9;
-  text-align: left;
-  display: flex;
-flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.task-image {
-max-width: 200px;
-max-height: 200px;
-margin-bottom: 10px;
-}
-.answer-input {
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-   border-radius: 5px;
-}
-.answer-button {
-  padding: 8px 15px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-   border-radius: 5px;
-   margin-left: 5px;
-}
-.answer-button:hover{
-background-color: #45a049;
-}
-.result-message {
-  margin-top: 10px;
-  font-weight: bold;
-}
-.result-message.correct {
-  color: green;
-}
-.result-message.incorrect {
-  color: red;
-}
-.decision-button {
-padding: 8px 15px;
-background-color: #2196F3;
-color: white;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-margin-left: 5px;
-display: none;
+  line-height: 80%;
+  height: 80%;
+
+
 }
 
-.decision-button:hover {
-background-color: #0b7dda;
+.mainpagetitle h1{
+  font-size: var(--font-size-large);
+  align-self: flex-start;
+}
+.pagestitles{
+  align-items: center;
 }
 
-.solution-image {
-  max-width: 200px;
-  max-height: 200px;
-  margin-top: 10px;
-}
-.task-number {
-font-weight: bold;
-margin-right: 5px;
+.pagestitles h1{
+  font-size: var(--font-size-large-but-smaller);
+  /* align-self: center; */
 }
