@@ -54,7 +54,7 @@
 }
 
 footer {
-    margin: var(--px15);
+    margin: 20px;
     text-align: right;
     padding: 20px 0;
     font-size: 0.8em;

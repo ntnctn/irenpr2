@@ -40,8 +40,8 @@
 @media (max-width: 990px) {
   :root {
 
-    --font-size-large: 9vw;
-    --font-size-main: 4vw;
+    --font-size-large:40px;
+    --font-size-main: 16px;
   }
 }
 @media (max-width: 770px) {
