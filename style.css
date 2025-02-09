@@ -39,7 +39,9 @@
   src: url("../fonts/GOTHIC.woff"), format("woff"); 
 }
 
-
+::-webkit-scrollbar {
+  width: 0;
+}
 body {
   font-family: var(--font-main);
   margin: 0;
@@ -120,7 +122,7 @@ nav a:hover::after {
 }
 
 h1{
-  font-family: var(--font-header);
+  font-family: "Dela Gothic One", serif;
   color: var(--color-primary);
 
   margin: 25px 0 0 0;
