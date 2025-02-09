@@ -13,12 +13,13 @@
   --border-radius-secondary: 50px;
 
 /* Шрифты */
---font-header: Bezier_Sans;
---font-main: Century_Gothic;
+--font-header: "Dela Gothic One", serif;
+--font-main:  "Zen Kaku Gothic Antique", serif;
+--font-weight-main: 550;
 
 /* Размеры */
 
---font-size-large: 7.4vw;
+--font-size-large: 9vw;
 --font-size-large-but-smaller:7vw;
 --font-size-main: 1.4vw;
 --font-size-small: 1vw;
@@ -27,23 +28,34 @@
 --px15:1.2vw;
 --px80: 6vw;
 
+
 }
 
-@font-face {
-  font-family: "Bezier_Sans";
-  src: url("../fonts/Bézier-Sans™_variable.woff"), format("woff"); 
+
+/* переопределение переменных для мобильных устройст */
+@media (max-width: 1400px) {
+
 }
 
-@font-face {
-  font-family: "Century_Gothic";
-  src: url("../fonts/GOTHIC.woff"), format("woff"); 
+@media (max-width: 990px) {
+  :root {
+
+    --font-size-large: 9vw;
+    --font-size-main: 4vw;
+  }
 }
+@media (max-width: 770px) {
+ 
+}
+
+
 
 ::-webkit-scrollbar {
   width: 0;
 }
 body {
   font-family: var(--font-main);
+  font-weight: var(--font-weight-main);
   margin: 0;
   padding: 0;
   display: flex;
@@ -122,13 +134,14 @@ nav a:hover::after {
 }
 
 h1{
-  font-family: "Dela Gothic One", serif;
+  font-family: var(--font-header);
   color: var(--color-primary);
 
-  margin: 25px 0 0 0;
+  margin: 25px 0 1px 0;
   padding: 0;
-  line-height: 80%;
-  height: 80%;
+
+  line-height: 89%;
+  /* height: 80%; */
 
 
 }
