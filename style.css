@@ -50,6 +50,16 @@
     .buttons {
       margin-right: 10%; /*  */
     }
+    .button img {
+      max-width: 20%; /*Чтобы изображение котика не вылезало за пределы*/
+      /* margin-bottom: 10px; */
+  }
+  .button {
+    width: 100%; /* Кнопки занимают большую часть ширины экрана */
+    margin-bottom: 10px;
+    padding: 100px 20px 15px 20px;
+    
+  }
   }
   
   /* планшеты */
@@ -84,7 +94,7 @@
       --font-size-large-but-smaller: 50px;
       --font-size-main: 14px;
       --font-size-small: 10px;
-      --font-size-for-btns: 25px;
+      --font-size-for-btns: 30px;
   
       --px20: 16px;
       --px15: 12px;
@@ -128,9 +138,14 @@ h2{
     .button {
       width: 100%; /* Кнопки занимают большую часть ширины экрана */
       margin-bottom: 10px;
+      padding: 50px 20px 20px 20px;
       
     }
-  
+    .button img{
+      max-width: 30%
+    }
+
+
     footer {
       text-align: center; /* Центрируем текст в подвале */
     }
@@ -172,7 +187,7 @@ h2{
   }
   
   p{
-    margin:0;
+    margin-top:10px;
   }
   
   main{

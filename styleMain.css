@@ -24,7 +24,7 @@
     background-color: #001f3f;
     color: white;
     text-decoration: none;
-    padding: 100px 20px 15px 20px;
+    /* padding: 100px 20px 15px 20px; */
     border-radius: 15px;
     font-size: var(--font-size-for-btns);
     display: flex; /* Чтобы выровнять текст и стрелку */
@@ -41,7 +41,7 @@
 }
 
 .button img {
-    max-width: 20%; /*Чтобы изображение котика не вылезало за пределы*/
+    /* max-width: 20%; Чтобы изображение котика не вылезало за пределы */
     margin-bottom: 10px;
 }
 
