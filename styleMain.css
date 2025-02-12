@@ -1,6 +1,4 @@
 
-
-
 .titles{
     /* text-align: left; */
     /* margin-bottom: 30px; */
@@ -17,7 +15,7 @@
     justify-content: flex-start; /* Равномерное распределение */
     align-items: left; /* Центрирование по вертикали */
     margin-top: 20px;
-    margin-right: 20%;
+    /* margin-right: 20%; */
     gap: 10px;
 
 }

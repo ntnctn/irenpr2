@@ -1,160 +1,273 @@
+
 :root {
 
-/* правила для цветовой гаммы */
-
-  --color-primary: #162745;
-  --color-primary-animation: #0e2d63;
-  --color-secondary: #000000;
-  --color-background: #ffffff;
-
-/* основные правила для геометрии */
-
-  --border-radius-main: 35px; 
-  --border-radius-secondary: 50px;
-
-/* Шрифты */
---font-header: "Dela Gothic One", serif;
---font-main:  "Zen Kaku Gothic Antique", serif;
---font-weight-main: 550;
-
-/* Размеры */
-
---font-size-large: 9vw;
---font-size-large-but-smaller:7vw;
---font-size-main: 1.4vw;
---font-size-small: 1vw;
-
---px20: 1.6vw;
---px15:1.2vw;
---px80: 6vw;
-
-
-}
-
-
-/* переопределение переменных для мобильных устройст */
-@media (max-width: 1400px) {
-
-}
-
-@media (max-width: 990px) {
-  :root {
-
-    --font-size-large:40px;
-    --font-size-main: 16px;
-  }
-}
-@media (max-width: 770px) {
- 
-}
-
-
-
-::-webkit-scrollbar {
-  width: 0;
-}
-body {
-  font-family: var(--font-main);
-  font-weight: var(--font-weight-main);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-size: var(--font-size-main);
-}
-
-p{
-  margin:0;
-}
-
-main{
-  /* max-width: 960px; */
-  margin: 0 20px 0 20px;
-  padding: var(--px20);
-  display: flex;
-  flex-direction: column;
-
-}
-
-
-nav {
-  display: flex; 
+  /* правила для цветовой гаммы */
   
-  /* max-width: 960px; */
-  margin: 20px auto 0 auto;
-  /* margin-left: auto;
-  margin-right: auto; */
-  justify-content: center;
-  padding: 5px 0;
-  border: 2px solid var(--color-primary);
-  border-radius: var(--border-radius-main);
-  /* font-size: var(--font-size-small); */
-}
+    --color-primary: #162745;
+    --color-primary-animation: #0e2d63;
+    --color-secondary: #000000;
+    --color-background: #ffffff;
+  
+  /* основные правила для геометрии */
+  
+    --border-radius-main: 35px; 
+    --border-radius-secondary: 50px;
+  
+  /* Шрифты */
+  --font-header: "Dela Gothic One", serif;
+  --font-main:  "Zen Kaku Gothic Antique", serif;
+  --font-weight-main: 550;
+  
+  /* Размеры */
+  
+  --font-size-large: 9vw;
+  --font-size-large-but-smaller:7vw;
+  --font-size-main: 1.4vw;
+  --font-size-small: 1vw;
+  
+  --px20: 1.6vw;
+  --px15:1.2vw;
+  --px80: 6vw;
+  
+  
+  }
+  
+  
+  /* переопределение переменных для разных устройств */
 
-nav a {
-  text-decoration: none;
-  color: var(--color-secondary);
-  margin: 0 15px;
-  padding: 5px 10px;
-
-  font-size: 100%;
-  line-height: 85%;
-  height: 85%;
-
-/* для анимки */
-  position: relative;
-
-}
-
-
-/* все дальше для анимки */
-nav a::after{
-  position: absolute;
-  content: '';
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  display: block;
-  height: 1.2px;
-  background: var(--color-primary);
-  width: 0;
-  transition: 0.3s;
-
-}
- 
-/* анимка при наведении */
-nav a:hover::after {
-  width: 90%;
-}
-
- .titles {
-  display: flex;
-  flex-direction: column;
-}
-
-h1{
-  font-family: var(--font-header);
-  color: var(--color-primary);
-
-  margin: 25px 0 1px 0;
-  padding: 0;
-
-  line-height: 89%;
-  /* height: 80%; */
+  /* ноубуки */
+  
+  @media (max-width: 1400px) {  
+    :root {
+      --font-size-large: 10vw; /* Немного увеличим для больших телефонов и маленьких планшетов */
+      --font-size-large-but-smaller: 8vw;
+      --font-size-main: 1.6vw;
+      --px20: 2vw;
+      --px15: 1.5vw;
+      --px80: 8vw;
+    }
+    .buttons {
+      margin-right: 10%; /*  */
+    }
+  }
+  
+  /* планшеты */
+  
+  @media (max-width: 990px) {
+    :root {
+      --font-size-large: 40px;
+      --font-size-large-but-smaller: 32px;
+      --font-size-main: 16px;
+      --font-size-small: 12px;
+  
+      --px20: 20px;
+      --px15: 15px;
+      --px80: 48px;
+    }
+  
+    nav a {
+      margin: 0 10px; /* Уменьшаем отступы между ссылками */
+    }
+  
+    .buttons {
+      margin-right: 5%; /*  */
+    }
+  }
 
 
-}
+  /* телефоны */
+  
+  @media (max-width: 770px) {
+    :root {
+      --font-size-large: 32px;
+      --font-size-large-but-smaller: 26px;
+      --font-size-main: 14px;
+      --font-size-small: 10px;
+  
+      --px20: 16px;
+      --px15: 12px;
+      --px80: 40px;
+    }
+  
+    nav {
+      flex-direction: column; /* Перестраиваем навигацию в столбец */
+      align-items: center;
+    }
+  
+    nav a {
+      margin: 5px 0; /* Увеличиваем вертикальные отступы в навигации */
+    }
+  
+    .mainpagetitle h1{
+      font-size: var(--font-size-large);
+      text-align: center;
+      align-self: center;
+    }
+    .pagestitles h1{
+      font-size: var(--font-size-large-but-smaller);
+      text-align: center;
+    }
+  
+    .titles p {
+      font-size: 1em; /*  */
+      line-height: 1.4;
+    }
+  
+    .buttons {
+      flex-direction: column; /* Перестраиваем кнопки в столбец */
+      align-items: center; /*  */
+      margin-right: 0%;
+    }
+  
+    .button {
+      width: 80%; /* Кнопки занимают большую часть ширины экрана */
+      margin-bottom: 10px;
+    }
+  
+    footer {
+      text-align: center; /* Центрируем текст в подвале */
+    }
+  }
+  
+  /* Меньше 576px (самые маленькие телефоны) */
+  @media (max-width: 576px) {
+    :root {
+      --font-size-large: 28px;
+      --font-size-large-but-smaller: 22px;
+      --font-size-main: 13px;
+      --font-size-small: 9px;
+    }
+  
+    .button {
+      width: 90%; /* Кнопки занимают еще большую часть ширины экрана */
+    }
+  }
+  
+  
+  
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  body {
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: var(--font-size-main);
+  }
+  
+  p{
+    margin:0;
+  }
+  
+  main{
+    /* max-width: 960px; */
+    /* margin: 0 20px 0 20px; */
+    padding: var(--px20);
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  
+  nav {
+    display: flex; 
+    
+    /* max-width: 960px; */
+    margin: 20px auto 0 auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    justify-content: center;
+    padding: 5px 0;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius-main);
+    /* font-size: var(--font-size-small); */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    margin: 0 15px;
+    padding: 5px 10px;
+  
+    font-size: 100%;
+    line-height: 85%;
+    height: 85%;
+  
+  /* для анимки */
+    position: relative;
+  
+  }
+  
+  
+  /* все дальше для анимки */
+  nav a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: block;
+    height: 1.2px;
+    background: var(--color-primary);
+    width: 0;
+    transition: 0.3s;
+  
+  }
+   
+  /* анимка при наведении */
+  nav a:hover::after {
+    width: 90%;
+  }
+  
+   .titles {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1{
+    font-family: var(--font-header);
+    color: var(--color-primary);
+  
+    margin: 25px 0 1px 0;
+    padding: 0;
+  
+    line-height: 89%;
+    /* height: 80%; */
+  
+  
+  }
+  
+  .mainpagetitle h1{
+    font-size: var(--font-size-large);
+    align-self: flex-start;
+  }
+  .pagestitles{
+    align-items: center;
+  }
+  
+  .pagestitles h1{
+    font-size: var(--font-size-large-but-smaller);
+    /* align-self: center; */
+  }
 
-.mainpagetitle h1{
-  font-size: var(--font-size-large);
-  align-self: flex-start;
-}
-.pagestitles{
-  align-items: center;
-}
 
-.pagestitles h1{
-  font-size: var(--font-size-large-but-smaller);
-  /* align-self: center; */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
