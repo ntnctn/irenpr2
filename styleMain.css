@@ -26,7 +26,7 @@
     text-decoration: none;
     padding: 100px 20px 15px 20px;
     border-radius: 15px;
-    font-size: 1.5em;
+    font-size: var(--font-size-for-btns);
     display: flex; /* Чтобы выровнять текст и стрелку */
     align-items: left;
     transition: background-color 0.3s;

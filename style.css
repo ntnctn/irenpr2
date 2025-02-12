@@ -24,6 +24,7 @@
   --font-size-large-but-smaller:7vw;
   --font-size-main: 1.4vw;
   --font-size-small: 1vw;
+  --font-size-for-btns: 5vw;
   
   --px20: 1.6vw;
   --px15:1.2vw;
@@ -79,10 +80,11 @@
   
   @media (max-width: 770px) {
     :root {
-      --font-size-large: 32px;
+      --font-size-large: 35px;
       --font-size-large-but-smaller: 26px;
       --font-size-main: 14px;
       --font-size-small: 10px;
+      --font-size-for-btns: 25px;
   
       --px20: 16px;
       --px15: 12px;
@@ -100,8 +102,8 @@
   
     .mainpagetitle h1{
       font-size: var(--font-size-large);
-      text-align: center;
-      align-self: center;
+      /* text-align: center;
+      align-self: center; */
     }
     .pagestitles h1{
       font-size: var(--font-size-large-but-smaller);
@@ -120,8 +122,9 @@
     }
   
     .button {
-      width: 80%; /* Кнопки занимают большую часть ширины экрана */
+      width: 100%; /* Кнопки занимают большую часть ширины экрана */
       margin-bottom: 10px;
+      
     }
   
     footer {
@@ -132,14 +135,14 @@
   /* Меньше 576px (самые маленькие телефоны) */
   @media (max-width: 576px) {
     :root {
-      --font-size-large: 28px;
+      --font-size-large: 35px;
       --font-size-large-but-smaller: 22px;
-      --font-size-main: 13px;
+      --font-size-main: 14px;
       --font-size-small: 9px;
     }
   
     .button {
-      width: 90%; /* Кнопки занимают еще большую часть ширины экрана */
+      width: 100%; /* Кнопки занимают еще большую часть ширины экрана */
     }
   }
   
