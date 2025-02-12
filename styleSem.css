@@ -76,14 +76,14 @@ flex-direction: column;
   width: 90%;
 }
 .task-image {
-max-width: 200px;
-max-height: 200px;
+  transform: scale(0.9);
+  max-width: 99%;
 margin-bottom: 10px;
 }
 .answer-input {
   padding: 8px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-secondary);
    border-radius: 5px;
 }
 #submit-semester-button {

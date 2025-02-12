@@ -81,7 +81,7 @@
   @media (max-width: 770px) {
     :root {
       --font-size-large: 35px;
-      --font-size-large-but-smaller: 26px;
+      --font-size-large-but-smaller: 50px;
       --font-size-main: 14px;
       --font-size-small: 10px;
       --font-size-for-btns: 25px;
@@ -90,10 +90,14 @@
       --px15: 12px;
       --px80: 40px;
     }
-  
+    
+h2{
+  text-align: center;
+}
+
     nav {
-      flex-direction: column; /* Перестраиваем навигацию в столбец */
-      align-items: center;
+      /* flex-direction: column; 
+      align-items: center; */
     }
   
     nav a {
@@ -130,13 +134,18 @@
     footer {
       text-align: center; /* Центрируем текст в подвале */
     }
+    .task-image {
+      /* max-width: 400px;
+      max-height: 400px; */
+      margin-bottom: 10px;
+      }
   }
   
   /* Меньше 576px (самые маленькие телефоны) */
   @media (max-width: 576px) {
     :root {
       --font-size-large: 35px;
-      --font-size-large-but-smaller: 22px;
+      --font-size-large-but-smaller: 50px;
       --font-size-main: 14px;
       --font-size-small: 9px;
     }

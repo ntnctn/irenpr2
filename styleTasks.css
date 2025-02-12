@@ -61,9 +61,9 @@
       /* position:sticky; */
     /* max-width: 70%;
     max-height: 10%; */
-    transform: scale(0.3);
-    max-width: 90%;
-    margin-bottom: 10px;
+    transform: scale(0.9);
+    max-width: 99%;
+    /* margin-bottom: 10px; */
     }
 
     .answer-input {
