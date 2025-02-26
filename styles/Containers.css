@@ -129,7 +129,7 @@ h2 {
 .task-number {
   font-weight: bold;
   margin-right: 5px;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 /* семестровые */
