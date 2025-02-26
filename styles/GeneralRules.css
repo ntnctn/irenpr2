@@ -38,7 +38,7 @@
 
   /* ноубуки */
   
-  @media (max-width: 1400px) {  
+  @media (min-width: 990px) {  
     :root {
       --font-size-large: 10vw; /* Немного увеличим для больших телефонов и маленьких планшетов */
       --font-size-large-but-smaller: 8vw;
