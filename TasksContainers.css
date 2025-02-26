@@ -1,0 +1,186 @@
+/* общее */
+
+.theme-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     width: 100%;
+     margin-bottom: 20px;
+     border: 1px solid var(--color-secondary);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.subtheme-list {
+    list-style: none;
+    padding: 0;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+     width: 100%;
+  }
+  .task-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--color-secondary);
+     border-radius: 8px;
+    background-color: var(--color-background);
+    text-align: left;
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+  .task-image {
+    /* position:sticky; */
+  /* max-width: 70%;
+  max-height: 10%; */
+  transform: scale(0.9);
+  max-width: 99%;
+  /* margin-bottom: 10px; */
+  }
+  .answer-input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid var(--color-secondary);
+    color:var(--color-secondary);
+     border-radius: 5px;
+  }
+
+  .decision-button {
+    padding: 8px 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+    display: none;
+    }
+    
+    .decision-button:hover {
+    background-color: var(--color-primary-animation);
+    }
+
+    .solution-image {
+        max-width: 90%;
+        /* max-height: 200px; */
+        margin-top: 10px;
+      }
+      
+      .result-message {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .result-message.correct {
+        color: green;
+      }
+      .result-message.incorrect {
+        color: red;
+      }
+
+/* задания */
+
+h2{
+  align-self: center;
+}
+
+
+    .tasks-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+       width: 70%;
+       align-self: center;
+    
+    }
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+
+    .answer-button {
+      padding: 8px 15px;
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+       border-radius: 5px;
+       margin-left: 5px;
+    }
+    .answer-button:hover{
+    background-color: var(--color-primary-animation);
+    }
+
+
+
+    
+
+    .task-number {
+    font-weight: bold;
+    margin-right: 5px;
+    }
+    
+/* семестровые */
+
+
+
+.semester-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+   border-radius: 5px;
+   margin: 0 10px;
+}
+.generate-button:hover{
+background-color: var(--color-primary-animation);
+}
+
+#semester-variants{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.variant-container{
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+   width: 100%;
+   border: 1px solid var(--color-secondary);
+  padding: 10px;
+  border-radius: 8px;
+      margin-bottom: 20px;
+}
+
+#submit-semester-button {
+      padding: 10px 20px;
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+       margin: 20px 0;
+}
+#submit-semester-button:hover {
+  background-color: var(--color-primary-animation);
+}
+
+
+.subtheme-number {
+font-weight: bold;
+margin-right: 5px;
+}

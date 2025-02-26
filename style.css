@@ -60,6 +60,9 @@
     padding: 100px 20px 15px 20px;
     
   }
+  h2{
+    text-align: center;
+  }
   }
   
   /* планшеты */
@@ -103,6 +106,7 @@
     
 h2{
   text-align: center;
+  
 }
 
     nav {

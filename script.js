@@ -114,7 +114,7 @@ async function renderThemeContent(contentContainer, themeTasks) {
             listItem.classList.add('task-item');
 
             const taskNumber = document.createElement('span');
-            taskNumber.textContent = `${index + 1}. `;
+            taskNumber.textContent = `${index + 1} `;
             taskNumber.classList.add('task-number');
             listItem.appendChild(taskNumber);
 
