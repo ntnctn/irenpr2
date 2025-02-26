@@ -79,7 +79,8 @@
     padding: 15px; 
   }
   .task-image{
-    max-width: 99%;
+    max-width: 90%;
+    scale: 0.7;
   }
 }
 
@@ -105,6 +106,10 @@
   .buttons {
     margin-right: 5%;
     /*  */
+  }
+  .task-image{
+    max-width: 90%;
+
   }
 }
 
