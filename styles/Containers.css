@@ -116,13 +116,20 @@ h2 {
   background-color: var(--color-primary-animation);
 }
 
+.task-image{
+  max-width: 100%;
+  scale: 0.7;
+  object-fit: cover;
+}
 
-
-
+.imgContainer{
+  max-height: 220px;
+}
 
 .task-number {
   font-weight: bold;
   margin-right: 5px;
+  max-width: 500px;
 }
 
 /* семестровые */

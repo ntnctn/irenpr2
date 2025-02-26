@@ -118,6 +118,9 @@ async function renderThemeContent(contentContainer, themeTasks) {
             taskNumber.classList.add('task-number');
             listItem.appendChild(taskNumber);
 
+            const imgContainer = document.createElement('div');
+
+
             const image = document.createElement('img');
             image.src = task.image;
             image.alt = 'задание';
@@ -142,8 +145,11 @@ async function renderThemeContent(contentContainer, themeTasks) {
                 showDecision(task.decision, listItem);
             });
             decisionButton.style.display = 'none';
+            
+            imgContainer.appendChild(image);
 
-            listItem.appendChild(image);
+            imgContainer.classList.add('imgContainer');
+            listItem.appendChild(imgContainer);
             listItem.appendChild(input);
             listItem.appendChild(answerButton);
             listItem.appendChild(decisionButton);

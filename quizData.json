@@ -3,7 +3,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение числового выражения",
         "number": 1,
-        "image": "images/2.jpg",
+        "image": "images/2.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -11,7 +11,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение числового выражения",
         "number": 2,
-        "image": "images/3.jpg",
+        "image": "images/3.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -19,7 +19,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение числового выражения",
         "number": 3,
-        "image": "images/4.jpg",
+        "image": "images/4.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -27,7 +27,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение числового выражения",
         "number": 4,
-        "image": "images/5.jpg",
+        "image": "images/5.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -35,7 +35,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение числового выражения",
         "number": 5,
-        "image": "images/6.jpg",
+        "image": "images/6.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -43,7 +43,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение выражения",
         "number": 1,
-        "image": "images/7.jpg",
+        "image": "images/7.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -51,7 +51,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение выражения",
         "number": 2,
-        "image": "images/8.jpg",
+        "image": "images/8.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -59,7 +59,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение выражения",
         "number": 3,
-        "image": "images/9.jpg",
+        "image": "images/9.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -67,7 +67,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение выражения",
         "number": 4,
-        "image": "images/10.jpg",
+        "image": "images/10.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -75,7 +75,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Найдите значение выражения",
         "number": 5,
-        "image": "images/11.jpg",
+        "image": "images/11.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -83,7 +83,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Разложить на множители",
         "number": 1,
-        "image": "images/12.jpg",
+        "image": "images/12.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -91,7 +91,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Разложить на множители",
         "number": 2,
-        "image": "images/13.jpg",
+        "image": "images/13.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -99,7 +99,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Разложить на множители",
         "number": 3,
-        "image": "images/14.jpg",
+        "image": "images/14.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -107,7 +107,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Разложить на множители",
         "number": 4,
-        "image": "images/15.jpg",
+        "image": "images/15.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -115,7 +115,7 @@
         "theme": "Разложение многочленов на множители. Формулы сокращенного умножения.",
         "subtheme": "Разложить на множители",
         "number": 5,
-        "image": "images/16.jpg",
+        "image": "images/16.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -123,7 +123,7 @@
         "theme": "Функции и их графики",
         "subtheme": "Вычисление значений функции по формуле",
         "number": 1,
-        "image": "images/17.jpg",
+        "image": "images/17.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -131,7 +131,7 @@
         "theme": "Функции и их графики",
         "subtheme": "Вычисление значений функции по формуле",
         "number": 2,
-        "image": "images/18.jpg",
+        "image": "images/18.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -139,7 +139,7 @@
         "theme": "Функции и их графики",
         "subtheme": "Вычисление значений функции по формуле",
         "number": 3,
-        "image": "images/19.jpg",
+        "image": "images/19.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -147,7 +147,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 1,
-        "image": "images/20.jpg",
+        "image": "images/20.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -155,7 +155,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 2,
-        "image": "images/21.jpg",
+        "image": "images/21.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -163,7 +163,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 3,
-        "image": "images/22.jpg",
+        "image": "images/22.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -171,7 +171,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 4,
-        "image": "images/23.jpg",
+        "image": "images/23.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -179,7 +179,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 5,
-        "image": "images/24.jpg",
+        "image": "images/24.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -187,7 +187,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 6,
-        "image": "images/25.jpg",
+        "image": "images/25.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -195,7 +195,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 7,
-        "image": "images/26.jpg",
+        "image": "images/26.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -203,7 +203,7 @@
         "theme": "Функции и их графики",
         "subtheme": "График функции",
         "number": 8,
-        "image": "images/27.jpg",
+        "image": "images/27.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -211,7 +211,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 1,
-        "image": "images/28.jpg",
+        "image": "images/28.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -219,7 +219,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 2,
-        "image": "images/29.jpg",
+        "image": "images/29.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -227,7 +227,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 3,
-        "image": "images/30.jpg",
+        "image": "images/30.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -235,7 +235,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 4,
-        "image": "images/31.jpg",
+        "image": "images/31.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -243,7 +243,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 5,
-        "image": "images/32.jpg",
+        "image": "images/32.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -251,7 +251,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 6,
-        "image": "images/33.jpg",
+        "image": "images/33.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -259,7 +259,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 7,
-        "image": "images/34.jpg",
+        "image": "images/34.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -267,7 +267,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 1,
-        "image": "images/35.jpg",
+        "image": "images/35.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -275,7 +275,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 2,
-        "image": "images/36.jpg",
+        "image": "images/36.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -283,7 +283,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 3,
-        "image": "images/37.jpg",
+        "image": "images/37.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -291,7 +291,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 3,
-        "image": "images/38.jpg",
+        "image": "images/38.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -299,7 +299,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений",
         "number": 3,
-        "image": "images/39.jpg",
+        "image": "images/39.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -307,7 +307,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений с параметром:",
         "number": 1,
-        "image": "images/40.jpg",
+        "image": "images/40.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -315,7 +315,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений с параметром:",
         "number": 2,
-        "image": "images/41.jpg",
+        "image": "images/41.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -323,7 +323,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений с параметром:",
         "number": 3,
-        "image": "images/42.jpg",
+        "image": "images/42.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -331,7 +331,7 @@
         "theme": "Системы линейных уравнений и способы их решений",
         "subtheme": "Решите систему уравнений с параметром:",
         "number": 4,
-		"image": "images/43.jpg",
+		"image": "images/43.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -339,7 +339,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 1,
-        "image": "images/44.jpg",
+        "image": "images/44.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -347,7 +347,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 2,
-        "image": "images/45.jpg",
+        "image": "images/45.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -355,7 +355,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 3,
-        "image": "images/46.jpg",
+        "image": "images/46.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -363,7 +363,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 4,
-        "image": "images/47.jpg",
+        "image": "images/47.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -371,7 +371,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 5,
-        "image": "images/48.jpg",
+        "image": "images/48.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -379,7 +379,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 6,
-        "image": "images/49.jpg",
+        "image": "images/49.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -387,7 +387,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 7,
-        "image": "images/50.jpg",
+        "image": "images/50.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -395,7 +395,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 8,
-        "image": "images/51.jpg",
+        "image": "images/51.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -403,7 +403,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 9,
-        "image": "images/52.jpg",
+        "image": "images/52.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -411,7 +411,7 @@
         "theme": "Уравнения",
         "subtheme": "Решите уравнение:",
         "number": 10,
-        "image": "images/53.jpg",
+        "image": "images/53.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -419,7 +419,7 @@
         "theme": "Задачи",
         "subtheme": "Решите задачу:",
         "number": 1,
-        "image": "images/54.jpg",
+        "image": "images/54.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -427,7 +427,7 @@
         "theme": "Задачи",
         "subtheme": "Решите задачу:",
         "number": 2,
-        "image": "images/55.jpg",
+        "image": "images/55.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -435,7 +435,7 @@
         "theme": "Задачи",
         "subtheme": "Решите задачу:",
         "number": 3,
-        "image": "images/56.jpg",
+        "image": "images/56.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -443,7 +443,7 @@
         "theme": "Задачи",
         "subtheme": "Решите задачу:",
         "number": 4,
-        "image": "images/57.jpg",
+        "image": "images/57.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -451,7 +451,7 @@
         "theme": "Задачи",
         "subtheme": "Решите задачу:",
         "number": 5,
-        "image": "images/58.jpg",
+        "image": "images/58.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -459,7 +459,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 1,
-        "image": "images/59.jpg",
+        "image": "images/59.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -467,7 +467,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 2,
-        "image": "images/61.jpg",
+        "image": "images/61.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -475,7 +475,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 3,
-        "image": "images/62.jpg",
+        "image": "images/62.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -483,7 +483,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 4,
-        "image": "images/63.jpg",
+        "image": "images/63.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -491,7 +491,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 5,
-        "image": "images/64.jpg",
+        "image": "images/64.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -499,7 +499,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 6,
-        "image": "images/65.jpg",
+        "image": "images/65.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -507,7 +507,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 7,
-        "image": "images/66.jpg",
+        "image": "images/66.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -515,7 +515,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 8,
-        "image": "images/67.jpg",
+        "image": "images/67.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -523,7 +523,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 9,
-        "image": "images/68.jpg",
+        "image": "images/68.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -531,7 +531,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 10,
-        "image": "images/69.jpg",
+        "image": "images/69.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -539,7 +539,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 11,
-        "image": "images/70.jpg",
+        "image": "images/70.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -547,7 +547,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 12,
-        "image": "images/71.jpg",
+        "image": "images/71.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -555,7 +555,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 13,
-        "image": "images/72.jpg",
+        "image": "images/72.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -563,7 +563,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 14,
-        "image": "images/73.jpg",
+        "image": "images/73.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -571,7 +571,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 15,
-        "image": "images/74.jpg",
+        "image": "images/74.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -579,7 +579,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 16,
-        "image": "images/75.jpg",
+        "image": "images/75.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -587,7 +587,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 17,
-        "image": "images/76.jpg",
+        "image": "images/76.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -595,7 +595,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 18,
-        "image": "images/77.jpg",
+        "image": "images/77.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -603,7 +603,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 19,
-        "image": "images/78.jpg",
+        "image": "images/78.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -611,7 +611,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 20,
-        "image": "images/79.jpg",
+        "image": "images/79.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
 	},
@@ -619,7 +619,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 21,
-        "image": "images/80.jpg",
+        "image": "images/80.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     },
@@ -627,7 +627,7 @@
         "theme": "Геометрические задачи",
         "subtheme": "Решите задачу:",
         "number": 22,
-        "image": "images/82.jpg",
+        "image": "images/82.png",
         "correctAnswer": "1",
         "decision": "images/a-1-1-1.png"
     }
