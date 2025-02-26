@@ -66,11 +66,18 @@ async function generateSemesterVariant(variantNumber) {
       return acc;
   }, {});
   const variantContainer = document.createElement('div')
-  variantContainer.classList.add('variant-container');
+  variantContainer.classList.add('tasks-container');
+  
+  const themeContainer = document.createElement('div')
+  themeContainer.classList.add('theme-container');
+  
   const variantTitle = document.createElement('h2');
   variantTitle.textContent = `Вариант ${variantNumber}`;
-  variantContainer.appendChild(variantTitle)
+  
+  themeContainer.appendChild(variantTitle)
+  variantContainer.appendChild(themeContainer)
   semesterVariantsContainer.appendChild(variantContainer)
+  
   let taskNumberInVariant = 1;
   for (const theme in groupedTasks) {
 
@@ -85,8 +92,8 @@ async function generateSemesterVariant(variantNumber) {
            subthemeTitle.append(subtheme);
 
 
-          variantContainer.appendChild(subthemeTitle);
-          variantContainer.appendChild(subthemeList);
+           themeContainer.appendChild(subthemeTitle);
+           themeContainer.appendChild(subthemeList);
           const tasksForSubtheme = groupedTasks[theme][subtheme];
           const taskForVariant = tasksForSubtheme.find(task => task.number == variantNumber);
           let listItem = document.createElement('li');
