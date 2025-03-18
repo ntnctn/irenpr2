@@ -102,6 +102,8 @@ async function renderThemes() {
         });
     }
 }
+
+
 function adjustImageSize(image, parentElement) {
     image.onload = () => {
         const originalWidth = image.width;
@@ -110,58 +112,72 @@ function adjustImageSize(image, parentElement) {
         // Оригинальный размер шрифта (высота строчных букв)
         const originalFontSizePixels = 25;
 
-        // Желаемый размер шрифта
-        const targetFontSizePixels = 9;
+        let targetFontSizePixels;
+        // Определяем целевой размер шрифта в зависимости от ширины экрана
+        if (window.innerWidth <= 768) { // Примерное значение для телефонов
+            targetFontSizePixels = 7;
+        } else { // Для ноутбуков и других устройств
+            targetFontSizePixels = 9;
+        }
 
-        // Вычисляем коэффициент масштабирования, чтобы изменить размер шрифта
         const fontSizeScaleFactor = targetFontSizePixels / originalFontSizePixels;
-
-        // Вычисляем коэффициент масштабирования для изображения в целом
-        // Важно: мы масштабируем *всё* изображение, чтобы пропорционально уменьшить и текст.
         const scaleFactor = fontSizeScaleFactor;
 
-
-        // console.log("Original Width:", originalWidth);
-        // console.log("Original Height:", originalHeight);
-        // console.log("Font Size Scale Factor:", fontSizeScaleFactor);
-        // console.log("Scale Factor:", scaleFactor);
-
-        // Устанавливаем максимальную ширину и высоту изображения.  Важно использовать max-width, а не width, чтобы сохранить пропорции.
-        image.style.maxWidth = `${originalWidth * scaleFactor}px`;
-        image.style.maxHeight = `${originalHeight * scaleFactor}px`;
-
-        // Дополнительная логика для управления размером относительно родительского элемента
-        // (опционально, в зависимости от требований макета)
         const parentWidth = parentElement.offsetWidth;
         const parentHeight = parentElement.offsetHeight;
 
-        const scaledWidth = originalWidth * scaleFactor;
-        const scaledHeight = originalHeight * scaleFactor;
+        const parentWidthVW = (parentWidth / window.innerWidth) * 100;
+        const parentHeightVW = (parentHeight / window.innerHeight) * 100;
 
-        if (scaledWidth > parentWidth) {
-            // Если масштабированное изображение шире родительского элемента,
-            // уменьшаем его еще раз, чтобы поместилось.  Это может потребовать
-            // изменить и высоту, чтобы сохранить пропорции.
-            const widthScale = parentWidth / scaledWidth;
-            image.style.maxWidth = `${parentWidth}px`;
-            image.style.maxHeight = `${scaledHeight * widthScale}px`; // Пропорционально уменьшаем высоту
-            console.log("Width adjusted to fit parent:", widthScale);
+        let scaledWidthVW;
+        let scaledHeightVW;
+
+        // Если телефон и картинка большая
+        if (window.innerWidth <= 768 && originalWidth >= 1500) {
+            scaledWidthVW = 90;  //Фиксированная ширина
+            const aspectRatio = originalHeight / originalWidth; // пропорция сторон
+            scaledHeightVW = 90 * aspectRatio; // Вычисляем высоту по пропорции
+            console.log("Большая картинка на телефоне")
+
+        } else {
+            // Для всех остальных случаев применяем масштабирование
+            const maxWidthScale = parentWidthVW / ((originalWidth / window.innerWidth) * 100);
+            const maxHeightScale = parentHeightVW / ((originalHeight / window.innerHeight) * 100);
+            const finalScaleFactor = Math.min(scaleFactor, maxWidthScale, maxHeightScale);
+
+            scaledWidthVW = (originalWidth * finalScaleFactor / window.innerWidth) * 100;
+            scaledHeightVW = (originalHeight * finalScaleFactor / window.innerHeight) * 100;
+            console.log("Маленькая картинка на телефоне / Любая на десктопе")
         }
 
-        if (scaledHeight > parentHeight) {
-            //Аналогично для высоты
-            const heightScale = parentHeight / scaledHeight;
-            image.style.maxHeight = `${parentHeight}px`;
-            image.style.maxWidth = `${scaledWidth * heightScale}px`
-            console.log("Height adjusted to fit parent:", heightScale);
-        }
+
+        image.style.maxWidth = `${scaledWidthVW}vw`;
+        image.style.maxHeight = `${scaledHeightVW}vw`;
 
 
-        console.log("Scaled Width:", image.offsetWidth);
-        console.log("Scaled Height:", image.offsetHeight);
+        console.log("Original Width:", originalWidth);
+        console.log("Original Height:", originalHeight);
+        console.log("Target Font Size:", targetFontSizePixels);
+        console.log("Font Size Scale Factor:", fontSizeScaleFactor);
+        console.log("Parent Width (px):", parentWidth);
+        console.log("Parent Height (px):", parentHeight);
+        console.log("Parent Width (vw):", parentWidthVW);
+        console.log("Parent Height (vw):", parentHeightVW);
+        // console.log("Max Width Scale:", maxWidthScale);
+        // console.log("Max Height Scale:", maxHeightScale);
+        // console.log("Final Scale Factor:", finalScaleFactor);
+        console.log("image.offsetWidth", image.offsetWidth)
+        console.log("image.offsetHeight", image.offsetHeight)
+        console.log("image.style.maxWidth (vw):", image.style.maxWidth)
+        console.log("image.style.maxHeight (vw):", image.style.maxHeight)
 
     };
 }
+
+
+
+
+
 
 
 
