@@ -28,6 +28,9 @@ function checkAnswer(inputElement, correctAnswer, listItem) {
     }
 }
 
+
+
+
 function showDecision(decisionImage, listItem) {
     let existingImage = listItem.querySelector('.solution-image');
     if (existingImage){
@@ -99,6 +102,70 @@ async function renderThemes() {
         });
     }
 }
+function adjustImageSize(image, parentElement) {
+    image.onload = () => {
+        const originalWidth = image.width;
+        const originalHeight = image.height;
+
+        // Оригинальный размер шрифта (высота строчных букв)
+        const originalFontSizePixels = 25;
+
+        // Желаемый размер шрифта
+        const targetFontSizePixels = 9;
+
+        // Вычисляем коэффициент масштабирования, чтобы изменить размер шрифта
+        const fontSizeScaleFactor = targetFontSizePixels / originalFontSizePixels;
+
+        // Вычисляем коэффициент масштабирования для изображения в целом
+        // Важно: мы масштабируем *всё* изображение, чтобы пропорционально уменьшить и текст.
+        const scaleFactor = fontSizeScaleFactor;
+
+
+        // console.log("Original Width:", originalWidth);
+        // console.log("Original Height:", originalHeight);
+        // console.log("Font Size Scale Factor:", fontSizeScaleFactor);
+        // console.log("Scale Factor:", scaleFactor);
+
+        // Устанавливаем максимальную ширину и высоту изображения.  Важно использовать max-width, а не width, чтобы сохранить пропорции.
+        image.style.maxWidth = `${originalWidth * scaleFactor}px`;
+        image.style.maxHeight = `${originalHeight * scaleFactor}px`;
+
+        // Дополнительная логика для управления размером относительно родительского элемента
+        // (опционально, в зависимости от требований макета)
+        const parentWidth = parentElement.offsetWidth;
+        const parentHeight = parentElement.offsetHeight;
+
+        const scaledWidth = originalWidth * scaleFactor;
+        const scaledHeight = originalHeight * scaleFactor;
+
+        if (scaledWidth > parentWidth) {
+            // Если масштабированное изображение шире родительского элемента,
+            // уменьшаем его еще раз, чтобы поместилось.  Это может потребовать
+            // изменить и высоту, чтобы сохранить пропорции.
+            const widthScale = parentWidth / scaledWidth;
+            image.style.maxWidth = `${parentWidth}px`;
+            image.style.maxHeight = `${scaledHeight * widthScale}px`; // Пропорционально уменьшаем высоту
+            console.log("Width adjusted to fit parent:", widthScale);
+        }
+
+        if (scaledHeight > parentHeight) {
+            //Аналогично для высоты
+            const heightScale = parentHeight / scaledHeight;
+            image.style.maxHeight = `${parentHeight}px`;
+            image.style.maxWidth = `${scaledWidth * heightScale}px`
+            console.log("Height adjusted to fit parent:", heightScale);
+        }
+
+
+        console.log("Scaled Width:", image.offsetWidth);
+        console.log("Scaled Height:", image.offsetHeight);
+
+    };
+}
+
+
+
+
 
 async function renderThemeContent(contentContainer, themeTasks) {
     for (const subtheme in themeTasks) {
@@ -120,8 +187,24 @@ async function renderThemeContent(contentContainer, themeTasks) {
 
             const imgContainer = document.createElement('div');
 
-
             const image = document.createElement('img');
+// image.src = task.image;
+// image.alt = 'задание';
+// image.classList.add('task-image');
+
+// Вызываем функцию масштабирования
+adjustImageSize(image, imgContainer); // Уменьшаем размер в 2 раза (коэффициент 0.5)
+
+// image.onload = () => {
+//     setTimeout(() => {
+//         adjustImageSize(image, 0.10);
+//     }, 0); // Задержка в 0 миллисекунд (просто для гарантии)
+// };
+
+
+
+
+            // const image = document.createElement('img');
             image.src = task.image;
             image.alt = 'задание';
             image.classList.add('task-image');

@@ -10,6 +10,8 @@
   padding: 10px;
   border-radius: 8px;
   text-align: center;
+  /* Добавлено: чтобы контент не вылезал */
+  overflow: hidden;
 }
 
 .subtheme-list {
@@ -24,7 +26,7 @@
 
 .task-item {
   margin-bottom: 20px;
-  padding: 15px; 
+  padding: 25px;
   border: 1px solid var(--color-secondary);
   border-radius: 8px;
   background-color: var(--color-background);
@@ -32,10 +34,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   gap: 10px;
+    /* Добавлено: чтобы контент не вылезал */
+  overflow: hidden;
 }
-
 
 .answer-input {
   padding: 8px;
@@ -61,8 +63,9 @@
 }
 
 .solution-image {
-  max-width: 90%;
-  /* max-height: 200px; */
+  max-width: 100%; /* Изменено: чтобы изображение занимало всю доступную ширину */
+  height: auto;  /*  Добавлено: чтобы высота масштабировалась пропорционально */
+  display: block; /* Добавлено:  убирает лишний отступ снизу у картинок */
   margin-top: 10px;
 }
 
@@ -100,6 +103,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   /* width: 90%; */
+  /* Добавлено: чтобы контент не вылезал */
+  overflow: hidden;
 }
 
 .answer-button {
@@ -116,21 +121,7 @@ h2 {
   background-color: var(--color-primary-animation);
 }
 
-.task-image{
-  max-width: 100%;
-  /* scale: 0.7; */
-  object-fit: cover;
-}
 
-.imgContainer{
-  max-height: 220px;
-}
-
-.task-number {
-  font-weight: bold;
-  margin-right: 5px;
-  /* max-width: 500px; */
-}
 
 /* семестровые */
 
@@ -171,6 +162,8 @@ h2 {
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 20px;
+  /* Добавлено: чтобы контент не вылезал */
+  overflow: hidden;
 }
 
 #submit-semester-button {
