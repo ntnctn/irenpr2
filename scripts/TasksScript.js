@@ -159,73 +159,84 @@ function adjustImageSize(image, parentElement) {
 //   }
   
   
-async function renderThemeContent(contentContainer, themeTasks) { // Функция для отображения контента темы
-    for (const subtheme in themeTasks) { // Перебираем подтемы
-        const subthemeList = document.createElement('ul'); // Создаем список для подтемы
-        subthemeList.classList.add('subtheme-list'); // Добавляем класс для стилизации списка подтемы
-        const subthemeTitle = document.createElement('h3'); // Создаем заголовок для подтемы
-        subthemeTitle.textContent = subtheme; // Устанавливаем текст заголовка подтемы
-        contentContainer.appendChild(subthemeTitle); // Добавляем заголовок подтемы в контейнер контента
-        contentContainer.appendChild(subthemeList); // Добавляем список подтемы в контейнер контента
+async function renderThemeContent(contentContainer, themeTasks) {
+    const isMobile = window.innerWidth <= 768;
 
-        themeTasks[subtheme].forEach((task, index) => { // Перебираем задачи в подтеме
-            const listItem = document.createElement('li'); // Создаем элемент списка для задачи
-            listItem.classList.add('task-item'); // Добавляем класс для стилизации элемента списка задачи
+    for (const subtheme in themeTasks) {
+        const subthemeList = document.createElement('ul');
+        subthemeList.classList.add('subtheme-list');
+        const subthemeTitle = document.createElement('h3');
+        subthemeTitle.textContent = subtheme;
+        contentContainer.appendChild(subthemeTitle);
+        contentContainer.appendChild(subthemeList);
 
-            const taskNumber = document.createElement('span'); // Создаем элемент для отображения номера задачи
-            taskNumber.textContent = `${index + 1} `; // Устанавливаем текст номера задачи
-            taskNumber.classList.add('task-number'); // Добавляем класс для стилизации номера задачи
-            listItem.appendChild(taskNumber); // Добавляем номер задачи в элемент списка
+        themeTasks[subtheme].forEach((task, index) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('task-item');
 
-            const imgContainer = document.createElement('div'); // Создаем контейнер для картинки задачи
+            const taskNumber = document.createElement('span');
+            taskNumber.textContent = `${index + 1} `;
+            taskNumber.classList.add('task-number');
+            listItem.appendChild(taskNumber);
 
-            const image = document.createElement('img'); // Создаем элемент изображения
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('imgContainer');
+            imgContainer.style.overflow = 'hidden';
+            imgContainer.style.display = 'flex'; // Используем flexbox для центрирования
+            imgContainer.style.justifyContent = 'center'; // Центрируем по горизонтали
+            imgContainer.style.alignItems = 'center'; // Центрируем по вертикали
 
-// adjustImageSize(image, imgContainer); 
+            listItem.appendChild(imgContainer);
 
+            const image = document.createElement('img');
+            image.src = task.image;
+            image.alt = 'задание';
+            image.classList.add('task-image');
 
-            image.src = task.image; // Устанавливаем путь к изображению
-            image.alt = 'задание'; // Устанавливаем alt текст
-            image.classList.add('task-image'); // Добавляем класс для стилизации изображения
+            // Увеличиваем размер картинок и центрируем их на мобильных устройствах для определенных подтем
+            if (isMobile && ["Найдите значение числового выражения", "Разложить на множители", "Решите систему уравнений", "Решите уравнение:"].includes(subtheme)) {
+                image.style.width = '200%';
+                image.style.maxWidth = 'none';
+            }
 
-            const input = document.createElement('input'); // Создаем поле ввода для ответа
-            input.type = 'text'; // Устанавливаем тип поля ввода
-            input.placeholder = 'Введите ответ'; // Устанавливаем текст-подсказку
-            input.classList.add('answer-input'); // Добавляем класс для стилизации поля ввода
+            imgContainer.appendChild(image);
 
-            const answerButton = document.createElement('button'); // Создаем кнопку для отправки ответа
-            answerButton.textContent = 'Ответить'; // Устанавливаем текст кнопки
-            answerButton.classList.add('answer-button'); // Добавляем класс для стилизации кнопки
-            answerButton.addEventListener('click', () => { // Добавляем обработчик события на клик
-                checkAnswer(input, task.correctAnswer, listItem); // Проверяем ответ
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Введите ответ';
+            input.classList.add('answer-input');
+
+            const answerButton = document.createElement('button');
+            answerButton.textContent = 'Ответить';
+            answerButton.classList.add('answer-button');
+            answerButton.addEventListener('click', () => {
+                checkAnswer(input, task.correctAnswer, listItem);
             });
 
-            const decisionButton = document.createElement('button'); // Создаем кнопку "Показать решение"
-            decisionButton.textContent = 'Показать решение'; // Устанавливаем текст кнопки
-            decisionButton.classList.add('decision-button'); // Добавляем класс для стилизации кнопки
-            decisionButton.addEventListener('click', () => { // Добавляем обработчик события на клик
-                showDecision(task.decision, listItem); // Показываем решение
+            const decisionButton = document.createElement('button');
+            decisionButton.textContent = 'Показать решение';
+            decisionButton.classList.add('decision-button');
+            decisionButton.addEventListener('click', () => {
+                showDecision(task.decision, listItem);
             });
-            decisionButton.style.display = 'none'; // Скрываем кнопку "Показать решение"
+            decisionButton.style.display = 'none';
 
-            imgContainer.appendChild(image); // Добавляем изображение в контейнер
 
-            imgContainer.classList.add('imgContainer'); // Добавляем класс для стилизации контейнера
-            listItem.appendChild(imgContainer); // Добавляем контейнер изображения в элемент списка
-            listItem.appendChild(input); // Добавляем поле ввода в элемент списка
-            listItem.appendChild(answerButton); // Добавляем кнопку отправки в элемент списка
-            listItem.appendChild(decisionButton); // Добавляем кнопку решения в элемент списка
+            listItem.appendChild(input);
+            listItem.appendChild(answerButton);
+            listItem.appendChild(decisionButton);
 
-            subthemeList.appendChild(listItem); // Добавляем элемент списка в список подтемы
+            subthemeList.appendChild(listItem);
         });
     }
 }
 
-async function loadQuizData() { // Асинхронная функция для загрузки данных викторины из JSON файла
-    const response = await fetch('quizData.json'); // Выполняем HTTP запрос к файлу quizData.json
-    const data = await response.json(); // Преобразуем полученный ответ в JSON формат
-    return data; // Возвращаем полученные данные
+async function loadQuizData() {
+    const response = await fetch('quizData.json');
+    const data = await response.json();
+    return data;
 }
+
 
 document.addEventListener('DOMContentLoaded', async () => { // Добавляем обработчик события на загрузку DOM
    await renderThemes(); // Отображаем темы после загрузки DOM

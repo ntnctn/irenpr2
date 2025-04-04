@@ -2,13 +2,25 @@
 /* общее */
 
 
-.task-image{
-  
-    max-width: 100%;
-    width: auto;
-
+.task-image {
+  max-width: 100%;
+  width: auto;
+  display: block; /* Важно:  Удаляет нижний отступ, который иногда появляется у изображений */
 }
 
+.imgContainer {
+  overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .subtheme-list h3 {
+    font-size: 2em; /* Увеличиваем размер шрифта заголовков на мобильных */
+  }
+  .imgContainer {
+    overflow: hidden; /* Скрываем границы картинок */
+  }
+}
 
 
 
