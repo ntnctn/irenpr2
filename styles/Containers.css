@@ -1,5 +1,17 @@
 @import url("Roots.css");
 /* общее */
+
+
+.task-image{
+  
+    max-width: 100%;
+    width: auto;
+
+}
+
+
+
+
 .theme-title, h3, .task-number{
   font-size: var(--font-size-main);
   font-family: var( --font-main);
@@ -31,7 +43,7 @@
 
 .task-item {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 25px 0px;
   border: 1px solid var(--color-secondary);
   border-radius: 8px;
   background-color: var(--color-background);
