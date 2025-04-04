@@ -1,198 +1,5 @@
-:root {
+@import url("Roots.css");
 
-  /* правила для цветовой гаммы */
-
-  --color-primary: #162745;
-  --color-primary-animation: #0e2d63;
-  --color-secondary: #000000;
-  --color-background: #ffffff;
-
-  /* основные правила для геометрии */
-
-  --border-radius-main: 35px;
-  --border-radius-secondary: 50px;
-
-  /* Шрифты */
-  --font-header: "Dela Gothic One", serif;
-  --font-main: "Zen Kaku Gothic Antique", serif;
-  --font-weight-main: 550;
-
-  /* Размеры */
-
-  --font-size-large: 9vw;
-  --font-size-large-but-smaller: 7vw;
-  --font-size-main: 1.4vw;
-  --font-size-small: 1vw;
-  --font-size-for-btns: 5vw;
-
-  --px20: 1.6vw;
-  --px15: 1.2vw;
-  --px80: 6vw;
-
-
-}
-
-
-/* переопределение переменных для разных устройств */
-
-/* ноубуки */
-
-@media (min-width: 990px) {
-  :root {
-    --font-size-large: 10vw;
-    /* Немного увеличим для больших телефонов и маленьких планшетов */
-    --font-size-large-but-smaller: 8vw;
-    --font-size-main: 1.6vw;
-    --px20: 2vw;
-    --px15: 1.5vw;
-    --px80: 8vw;
-  }
-
-  .buttons {
-    margin-right: 10%;
-    /*  */
-  }
-
-  .button img {
-    max-width: 20%;
-    /*Чтобы изображение котика не вылезало за пределы*/
-    /* margin-bottom: 10px; */
-  }
-
-  .button {
-    width: 100%;
-    /* Кнопки занимают большую часть ширины экрана */
-    margin-bottom: 10px;
-    padding: 100px 20px 15px 20px;
-
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .tasks-container {
-    width: 70%;
-  }
-  .task-item{
-    width: 90%;
-    padding: 15px; 
-  }
-
-}
-
-/* планшеты */
-
-@media (max-width: 990px) {
-  :root {
-    --font-size-large: 40px;
-    --font-size-large-but-smaller: 32px;
-    --font-size-main: 16px;
-    --font-size-small: 12px;
-
-    --px20: 20px;
-    --px15: 15px;
-    --px80: 48px;
-  }
-
-  nav a {
-    margin: 0 10px;
-    /* Уменьшаем отступы между ссылками */
-  }
-
-  .buttons {
-    margin-right: 5%;
-    /*  */
-  }
-
-}
-
-
-/* телефоны */
-
-@media (max-width: 770px) {
-  :root {
-    --font-size-large: 35px;
-    --font-size-large-but-smaller: 50px;
-    --font-size-main: 14px;
-    --font-size-small: 10px;
-    --font-size-for-btns: 30px;
-
-    --px20: 16px;
-    --px15: 12px;
-    --px80: 40px;
-  }
-
-  h2 {
-    text-align: center;
-
-  }
-  nav a {
-    margin: 5px 0;
-  }
-
-  .mainpagetitle h1 {
-    font-size: var(--font-size-large);
-  }
-
-  .pagestitles h1 {
-    font-size: var(--font-size-large-but-smaller);
-    text-align: center;
-  }
-
-  .titles p {
-    font-size: 1em;
-    line-height: 1.4;
-  }
-
-  .buttons {
-    flex-direction: column;
-    /* Перестраиваем кнопки в столбец */
-    align-items: center;
-    /*  */
-    margin-right: 0%;
-  }
-
-  .button {
-    width: 100%;
-    /* Кнопки занимают большую часть ширины экрана */
-    margin-bottom: 10px;
-    padding: 50px 20px 20px 20px;
-
-  }
-  .button img {
-    max-width: 30%
-  }
-  footer {
-    text-align: center;
-    /* Центрируем текст в подвале */
-  }
-
-
-
-  .tasks-container {
-    width: 100%;
-  }
-  .task-item{
-    width: 95%; 
-    /* padding: 15px 0px 15px 0px; */
-  }
-}
-
-/* Меньше 576px (самые маленькие телефоны) */
-@media (max-width: 576px) {
-  :root {
-    --font-size-large: 35px;
-    --font-size-large-but-smaller: 50px;
-    --font-size-main: 14px;
-    --font-size-small: 9px;
-  }
-
-  .button {
-    width: 100%;
-    /* Кнопки занимают еще большую часть ширины экрана */
-  }
-}
 
 
 
@@ -229,11 +36,11 @@ nav {
   display: flex;
 
   /* max-width: 960px; */
-  margin: 20px auto 0 auto;
+  margin: 10px auto 0 auto;
   /* margin-left: auto;
     margin-right: auto; */
   justify-content: center;
-  padding: 5px 0;
+  padding: 15px 10px;
   border: 2px solid var(--color-primary);
   border-radius: var(--border-radius-main);
   /* font-size: var(--font-size-small); */
@@ -245,7 +52,7 @@ nav a {
   margin: 0 15px;
   padding: 5px 10px;
 
-  font-size: 100%;
+  font-size: 22px;
   line-height: 85%;
   height: 85%;
 
@@ -304,5 +111,5 @@ h1 {
 
 .pagestitles h1 {
   font-size: var(--font-size-large-but-smaller);
-  /* align-self: center; */
+  
 }

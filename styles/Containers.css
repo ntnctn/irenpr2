@@ -1,4 +1,9 @@
+@import url("Roots.css");
 /* общее */
+.theme-title, h3, .task-number{
+  font-size: var(--font-size-main);
+  font-family: var( --font-main);
+}
 
 .theme-container {
   display: flex;

@@ -108,56 +108,64 @@ async function renderThemes() { // Асинхронная функция для 
 
 function adjustImageSize(image, parentElement) { // Функция для изменения размера изображения
     image.onload = () => { // Когда изображение загружено
-        const originalWidth = image.width; // Сохраняем оригинальную ширину
-        const originalHeight = image.height; // Сохраняем оригинальную высоту
-
-        // Оригинальный размер шрифта (высота строчных букв)
-        const originalFontSizePixels = 25;
-
-        let targetFontSizePixels; // Объявляем переменную для целевого размера шрифта
-        // Определяем целевой размер шрифта в зависимости от ширины экрана
-        if (window.innerWidth <= 768) { // Примерное значение для телефонов
-            targetFontSizePixels = 7; // Размер шрифта для телефонов
-        } else { // Для ноутбуков и других устройств
-            targetFontSizePixels = 9; // Размер шрифта для ноутбуков
-        }
-
-        const fontSizeScaleFactor = targetFontSizePixels / originalFontSizePixels; // Вычисляем коэффициент масштабирования шрифта
-        const scaleFactor = fontSizeScaleFactor; // Общий коэффициент масштабирования равен масштабированию шрифта
-
-        const parentWidth = parentElement.offsetWidth; // Получаем ширину родительского элемента
-        const parentHeight = parentElement.offsetHeight; // Получаем высоту родительского элемента
-
-        const parentWidthVW = (parentWidth / window.innerWidth) * 100; // Ширина родительского элемента в viewport width
-        const parentHeightVW = (parentHeight / window.innerHeight) * 100; // Высота родительского элемента в viewport height
-
-        let scaledWidthVW; // Объявляем переменную для масштабированной ширины в vw
-        let scaledHeightVW; // Объявляем переменную для масштабированной высоты в vw
-
-        // Если телефон и картинка большая
-        // не работает на пейджес
-        if (window.innerWidth <= 768 && originalWidth >= 1500) { // Если устройство - телефон и изображение очень большое
-            scaledWidthVW = 90;  //Фиксированная ширина
-            const aspectRatio = originalHeight / originalWidth; // пропорция сторон
-            scaledHeightVW = 90 * aspectRatio; // Вычисляем высоту по пропорции
-            console.log("Большая картинка на телефоне")
-
-        } else { // Для всех остальных случаев применяем масштабирование
-            const maxWidthScale = parentWidthVW / ((originalWidth / window.innerWidth) * 100); // Масштабирование по ширине
-            const maxHeightScale = parentHeightVW / ((originalHeight / window.innerHeight) * 100); // Масштабирование по высоте
-            const finalScaleFactor = Math.min(scaleFactor, maxWidthScale, maxHeightScale); // Выбираем наименьший масштаб
-
-            scaledWidthVW = (originalWidth * finalScaleFactor / window.innerWidth) * 100; // Вычисляем масштабированную ширину
-            scaledHeightVW = (originalHeight * finalScaleFactor / window.innerHeight) * 100; // Вычисляем масштабированную высоту
-            console.log("Маленькая картинка на телефоне / Любая на десктопе")
-        }
-
-
-        image.style.maxWidth = `${scaledWidthVW}vw`; // Устанавливаем максимальную ширину изображения
-        image.style.maxHeight = `${scaledHeightVW}vw`; // Устанавливаем максимальную высоту изображения
-
+      const originalWidth = image.width; // Сохраняем оригинальную ширину
+      const originalHeight = image.height; // Сохраняем оригинальную высоту
+  
+      // Оригинальный размер шрифта (высота строчных букв)
+      const originalFontSizePixels = 25;
+  
+      let targetFontSizePixels; // Объявляем переменную для целевого размера шрифта
+      // Определяем целевой размер шрифта в зависимости от ширины экрана
+      if (window.innerWidth <= 768) { // Примерное значение для телефонов
+        targetFontSizePixels = 9; // Увеличиваем размер шрифта для телефонов чтобы картинка была больше
+      } else { // Для ноутбуков и других устройств
+        targetFontSizePixels = 9; // Размер шрифта для ноутбуков
+      }
+  
+      const fontSizeScaleFactor = targetFontSizePixels / originalFontSizePixels; // Вычисляем коэффициент масштабирования шрифта
+      const scaleFactor = fontSizeScaleFactor; // Общий коэффициент масштабирования равен масштабированию шрифта
+  
+      const parentWidth = parentElement.offsetWidth; // Получаем ширину родительского элемента
+      const parentHeight = parentElement.offsetHeight; // Получаем высоту родительского элемента
+  
+      const parentWidthVW = (parentWidth / window.innerWidth) * 100; // Ширина родительского элемента в viewport width
+      const parentHeightVW = (parentHeight / window.innerHeight) * 100; // Высота родительского элемента в viewport height
+  
+      let scaledWidthVW; // Объявляем переменную для масштабированной ширины в vw
+      let scaledHeightVW; // Объявляем переменную для масштабированной высоты в vw
+  
+      // Если телефон и картинка большая
+      // не работает на пейджес
+      if (window.innerWidth <= 768 && originalWidth >= 1500) { // Если устройство - телефон и изображение очень большое
+        scaledWidthVW = 95;  //Немного увеличиваем фиксированную ширину для больших картинок на телефоне
+        const aspectRatio = originalHeight / originalWidth; // пропорция сторон
+        scaledHeightVW = 95 * aspectRatio; // Вычисляем высоту по пропорции
+        console.log("Большая картинка на телефоне");
+  
+      } else { // Для всех остальных случаев применяем масштабирование
+        let maxWidthScale = parentWidthVW / ((originalWidth / window.innerWidth) * 100); // Масштабирование по ширине
+        let maxHeightScale = parentHeightVW / ((originalHeight / window.innerHeight) * 100); // Масштабирование по высоте
+  
+          // Немного увеличиваем maxWidthScale и maxHeightScale для телефонов, чтобы картинки были больше
+          if (window.innerWidth <= 768) {
+              maxWidthScale *= 1.1;  // Можно попробовать другие значения, например 1.2 или 1.3
+              maxHeightScale *= 1.1;
+          }
+  
+        const finalScaleFactor = Math.min(scaleFactor, maxWidthScale, maxHeightScale); // Выбираем наименьший масштаб
+  
+        scaledWidthVW = (originalWidth * finalScaleFactor / window.innerWidth) * 100; // Вычисляем масштабированную ширину
+        scaledHeightVW = (originalHeight * finalScaleFactor / window.innerHeight) * 100; // Вычисляем масштабированную высоту
+        console.log("Маленькая картинка на телефоне / Любая на десктопе");
+      }
+  
+  
+      image.style.maxWidth = `${scaledWidthVW}vw`; // Устанавливаем максимальную ширину изображения
+      image.style.maxHeight = `${scaledHeightVW}vw`; // Устанавливаем максимальную высоту изображения
+  
     };
-}
+  }
+  
 
 async function renderThemeContent(contentContainer, themeTasks) { // Функция для отображения контента темы
     for (const subtheme in themeTasks) { // Перебираем подтемы

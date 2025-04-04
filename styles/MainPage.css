@@ -1,14 +1,4 @@
-
-/* .titles{
-    text-align: left;
-    margin-bottom: 30px;
-} */
-
-
-/* .titles p {
-    font-size: 1.2em;
-    line-height: 1.6;
-} */
+@import url("Roots.css");
 
 .buttons {
     display: flex;
