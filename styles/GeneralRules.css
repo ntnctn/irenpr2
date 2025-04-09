@@ -83,6 +83,7 @@ nav a:hover::after {
 .titles {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 h1 {
@@ -114,4 +115,10 @@ h1 {
 .pagestitles h1 {
   font-size: var(--font-size-large-but-smaller);
   
+}
+
+.titles p{
+  text-align: center;
+  margin: 10px;
+  font-size: var(--font-size-main);
 }
