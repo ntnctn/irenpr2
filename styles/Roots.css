@@ -21,7 +21,7 @@
 
   /* Размеры */
 
-  --font-size-large: 9vw;
+  --font-size-large: 12px;
   --font-size-large-but-smaller: 7vw;
   --font-size-main: 1.4vw;
   --font-size-small: 1vw;
@@ -37,10 +37,10 @@
 
 @media (min-width: 990px) {
     :root {
-      --font-size-large: 10vw;
-      /* Немного увеличим для больших телефонов и маленьких планшетов */
-      --font-size-large-but-smaller: 120px; 
-      /* Для хедеров */
+      --font-size-large: 120px; 
+      
+      --font-size-large-but-smaller: 120px; /* Для хедеров */
+      
       --font-size-main: 1.6vw;
       --px20: 2vw;
       --px15: 1.5vw;

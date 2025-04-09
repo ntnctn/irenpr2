@@ -1,8 +1,6 @@
 @import url("Roots.css");
 
 
-
-
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -99,10 +97,14 @@ h1 {
 
 
 }
-
+.mainpagetitle{
+  max-width: 100%;
+  width: auto;
+}
 .mainpagetitle h1 {
   font-size: var(--font-size-large);
   align-self: flex-start;
+  margin: auto;
 }
 
 .pagestitles {

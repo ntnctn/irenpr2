@@ -2,31 +2,37 @@
 /* общее */
 
 
-.task-image {
+.task-image { 
+  /* картинка */
   max-width: 100%;
   width: auto;
-  display: block; /* Важно:  Удаляет нижний отступ, который иногда появляется у изображений */
+  display: block;
 }
 
 .imgContainer {
+  /* контейнер с картинкой */
   overflow: hidden;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+/* адаптация картинки под маленькие экраны */
+{
   .subtheme-list h3 {
-    font-size: 2em; /* Увеличиваем размер шрифта заголовков на мобильных */
+    font-size: 2em;
   }
+
   .imgContainer {
-    overflow: hidden; /* Скрываем границы картинок */
+    overflow: hidden;
   }
 }
 
-
-
-.theme-title, h3, .task-number{
+.theme-title,
+h3,
+.task-number {
+/* большие шрифты для некоторых заголовков */
   font-size: var(--font-size-main);
-  font-family: var( --font-main);
+  font-family: var(--font-main);
 }
 
 .theme-container {
@@ -39,8 +45,8 @@
   padding: 10px;
   border-radius: 8px;
   text-align: center;
-  /* Добавлено: чтобы контент не вылезал */
-  
+
+
 }
 
 .subtheme-list {
@@ -64,8 +70,8 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-    /* Добавлено: чтобы контент не вылезал */
-  
+  /* Добавлено: чтобы контент не вылезал */
+
 }
 
 .answer-input {
@@ -92,9 +98,12 @@
 }
 
 .solution-image {
-  max-width: 100%; /* Изменено: чтобы изображение занимало всю доступную ширину */
-  height: auto;  /*  Добавлено: чтобы высота масштабировалась пропорционально */
-  display: block; /* Добавлено:  убирает лишний отступ снизу у картинок */
+  max-width: 100%;
+  /* Изменено: чтобы изображение занимало всю доступную ширину */
+  height: auto;
+  /*  Добавлено: чтобы высота масштабировалась пропорционально */
+  display: block;
+  /* Добавлено:  убирает лишний отступ снизу у картинок */
   margin-top: 10px;
 }
 
@@ -133,7 +142,7 @@ h2 {
   align-items: center;
   /* width: 90%; */
   /* Добавлено: чтобы контент не вылезал */
-  
+
 }
 
 .answer-button {

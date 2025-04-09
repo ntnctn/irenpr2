@@ -1,30 +1,30 @@
 
 const mainContainer = document.querySelector('main'); // Получаем ссылку на элемент <main> в HTML
-const tasksContainer = document.createElement('div'); // Создаем новый элемент <div>
-tasksContainer.classList.add('tasks-container'); // Добавляем класс 'tasks-container' к созданному элементу
+const tasksContainer = document.createElement('div'); 
+tasksContainer.classList.add('tasks-container'); 
 mainContainer.appendChild(tasksContainer); // Добавляем tasksContainer в конец элемента mainContainer
 
 function checkAnswer(inputElement, correctAnswer, listItem) { // Функция для проверки ответа пользователя
 
-    const userAnswer = inputElement.value.trim().toLowerCase(); // Получаем ответ пользователя, удаляем пробелы и приводим к нижнему регистру
+    const userAnswer = inputElement.value.trim().toLowerCase(); 
     let resultMessage = listItem.querySelector('.result-message'); // Пытаемся найти существующий элемент с классом 'result-message' внутри listItem
-    if (!resultMessage) { // Если элемент с классом 'result-message' не найден
-        resultMessage = document.createElement('p'); // Создаем новый элемент <p>
-        resultMessage.classList.add('result-message'); // Добавляем класс 'result-message' к созданному элементу
+    if (!resultMessage) { 
+        resultMessage = document.createElement('p'); 
+        resultMessage.classList.add('result-message'); 
         listItem.appendChild(resultMessage); // Добавляем resultMessage в конец элемента listItem
     }
     const decisionButton = listItem.querySelector('.decision-button'); // Получаем кнопку "Показать решение"
-    decisionButton.style.display = 'inline-block'; // Отображаем кнопку решения
+    decisionButton.style.display = 'inline-block'; 
 
-    if (userAnswer === correctAnswer) { // Если ответ пользователя совпадает с правильным ответом
-        resultMessage.textContent = 'Правильно!'; // Устанавливаем текст сообщения о результате
-        resultMessage.classList.remove('incorrect'); // Удаляем класс 'incorrect'
-        resultMessage.classList.add('correct'); // Добавляем класс 'correct'
+    if (userAnswer === correctAnswer) { 
+        resultMessage.textContent = 'Правильно!'; 
+        resultMessage.classList.remove('incorrect'); 
+        resultMessage.classList.add('correct'); 
 
-    } else { // Если ответ пользователя не совпадает с правильным ответом
-        resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`; // Устанавливаем текст сообщения о результате с правильным ответом
-        resultMessage.classList.remove('correct'); // Удаляем класс 'correct'
-        resultMessage.classList.add('incorrect'); // Добавляем класс 'incorrect'
+    } else { 
+        resultMessage.textContent = `Неверно. Правильный ответ: ${correctAnswer}`; 
+        resultMessage.classList.remove('correct');
+        resultMessage.classList.add('incorrect'); 
 
     }
 
