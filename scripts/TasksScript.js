@@ -194,8 +194,8 @@ async function renderThemeContent(contentContainer, themeTasks) {
             image.classList.add('task-image');
 
             // Увеличиваем размер картинок и центрируем их на мобильных устройствах для определенных подтем
-            if (isMobile && ["Найдите значение числового выражения", "Разложить на множители", "Решите систему уравнений", "Решите уравнение:"].includes(subtheme)) {
-                image.style.width = '200%';
+            if (isMobile && ["Найдите значение числового выражения", "Разложить на множители", "Решите систему уравнений", "Решите систему уравнений с параметром:", "Решите уравнение:"].includes(subtheme)) {
+                image.style.width = '150%';
                 image.style.maxWidth = 'none';
             }
 
